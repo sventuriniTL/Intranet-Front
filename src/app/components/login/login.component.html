@@ -1,0 +1,26 @@
+<div fxLayout="row" fxFlexFill fxLayout.xs="column"  class="login-div"  >
+    <div fxFlex = "50%" fxFlex.xs="100%" fxLayoutAlign="center" class="div-izq">
+       
+        <mat-card fxFlex="100%" fxLayoutAlign="center" >
+                
+                <form fxLayout="column" class="login-form" fxFlex="50%">
+                    <h1 fxLayoutAlign="center"><img class="logo" src="../../../assets/imagenes/logo.jpg"></h1>
+                    <p fxLayoutAlign="center">Iniciar sesión</p>
+                    <mat-form-field >
+                    <mat-label>Usuario</mat-label>
+                    <input matInput placeholder="Usuario" value="">
+                    <mat-icon matSuffix>account_circle</mat-icon>
+                    </mat-form-field>
+                
+                    <mat-form-field>
+                    <mat-label>Contraseña</mat-label>
+                    <input matInput placeholder="Contraseña" value="" type="password" >
+                    <mat-icon matSuffix>key</mat-icon>
+                    </mat-form-field>
+                    
+                    <button mat-button mat-raised-button href="#dashBoard" routerLink="/dashBoard">Login</button>
+                </form>
+        </mat-card>
+    </div>
+    <div fxFlex="50%" fxLayoutAlign="center center" class="imagen-div"><img class="img-fluid" src="../../../assets/imagenes/TECNOLAB0373.jpg" ></div>
+</div>

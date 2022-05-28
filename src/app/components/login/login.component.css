@@ -1,0 +1,53 @@
+.login-div mat-card{
+    padding: 30px;
+    background-color: rgb(255, 255, 255);
+}
+.login-form{
+    padding: 20px;
+    
+}
+.img-fluid{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    object-position: 10% 45%; 
+}
+.logo{
+    width: 100%;
+    object-fit: contain;
+}
+button:hover{
+    background-color : rgb(0, 88, 124);
+    color:antiquewhite;
+    cursor: pointer;
+}
+
+@media screen and (max-width:599px){
+    .login-form{
+        height: 860px;
+        object-fit: cover;
+        
+    }
+    .imagen-div{
+        height: 0%;
+        
+    }
+    .logo{
+        width: 200px;
+    }
+    mat-form-field{
+        width: 115px;
+        justify-content: center;
+        align-items: center;
+        margin: 0 auto;
+        display: flex;
+        
+    }
+}
+mat-form-field{
+    color: rgb(0, 88, 124);
+}
+input{
+    color: rgb(0, 88, 124);
+}
+
