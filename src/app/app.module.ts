@@ -10,6 +10,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { NavBarComponent } from './shared/nav-bar/nav-bar.component';
 import { SideBarComponent } from './shared/side-bar/side-bar.component';
+import { MainContentComponent } from './shared/main-content/main-content.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { SideBarComponent } from './shared/side-bar/side-bar.component';
     DashboardComponent,
     NavBarComponent,
     SideBarComponent,
-    
+    MainContentComponent,
+  
   ],
   imports: [
     BrowserModule,
