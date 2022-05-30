@@ -6,4 +6,29 @@ html, body {
  }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
+*::-webkit-scrollbar {
+    -webkit-appearance: none;
+}
+
+*::-webkit-scrollbar:vertical {
+    width:9.9px;
+}
+
+
+*::-webkit-scrollbar:horizontal {
+    height: 9.9px;
+}
+
+*::-webkit-scrollbar-thumb {
+    background-color: rgb(179, 179, 179);
+    border-radius: 20px;
+    border: 2px solid rgba(0, 58, 81, 0.386);
+}
+
+*::-webkit-scrollbar-track {
+    border-radius: 10px;  
+}
+  
+
+
 
