@@ -9,8 +9,7 @@ import {MatIconModule} from '@angular/material/icon';
 import {MatProgressBarModule} from '@angular/material/progress-bar';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatDividerModule} from '@angular/material/divider';
-
-
+import {MatGridListModule} from '@angular/material/grid-list';
 
 
 @NgModule({
@@ -28,6 +27,7 @@ import {MatDividerModule} from '@angular/material/divider';
     MatProgressBarModule,
     MatSidenavModule,
     MatDividerModule,
+    MatGridListModule,
     
   ]
   

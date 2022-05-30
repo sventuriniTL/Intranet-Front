@@ -11,6 +11,7 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { NavBarComponent } from './shared/nav-bar/nav-bar.component';
 import { SideBarComponent } from './shared/side-bar/side-bar.component';
 import { MainContentComponent } from './shared/main-content/main-content.component';
+import { ChartsModule } from './charts.module';
 
 @NgModule({
   declarations: [
@@ -20,14 +21,15 @@ import { MainContentComponent } from './shared/main-content/main-content.compone
     NavBarComponent,
     SideBarComponent,
     MainContentComponent,
-  
+    
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     MaterialModule,
-    FlexLayoutModule
+    FlexLayoutModule,
+    ChartsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
