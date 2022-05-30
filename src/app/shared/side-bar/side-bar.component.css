@@ -72,10 +72,22 @@ mat-sidenav a:HOVER{
     width: 190px;
 }
 
-@media screen and (max-height: 450px) {
-    mat-sidenav {padding-top: 15px;}
+@media screen and (max-width:1250px) {
+    mat-sidenav {
+        padding-top: 15px;
+        width: 28%;
+    }
     mat-sidenav a {font-size: 18px;}
   }
+@media screen and (max-width:420px) {
+    mat-sidenav {
+        width: 60%;
+    }
+    .logo{
+        height: 40px;
+        width: 180px;
+    }
+}
 mat-divider{
     background-color: rgba(138, 138, 138, 0.396);
 }
