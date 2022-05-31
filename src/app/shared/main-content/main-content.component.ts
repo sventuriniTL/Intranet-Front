@@ -10,7 +10,7 @@ import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 })
 
 export class MainContentComponent implements OnInit {
-  mybreakpoint!: number;
+  
   cols! : number;
 
   gridByBreakpoint = {
