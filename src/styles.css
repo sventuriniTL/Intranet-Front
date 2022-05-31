@@ -2,17 +2,19 @@
 
 html, body { 
     height: 100%;
+    width: 100%;
     background-color: rgb(255, 255, 255);
  }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
 *::-webkit-scrollbar {
     -webkit-appearance: none;
+    width:8px;
 }
 
 
 *::-webkit-scrollbar:vertical {
-    width:9.9px;
+    width:8px;
     padding: auto;
 }
 
@@ -22,13 +24,13 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 }
 
 *::-webkit-scrollbar-thumb {
-    background-color: rgb(179, 179, 179);
-    border-radius: 20px;
-    border: 2px solid rgba(0, 58, 81, 0.386);
+    background-color: rgb(50, 50, 50);
+    border-radius: 5px;
+    border: 1rem solid rgba(0, 58, 81, 0.386);
 }
 
 *::-webkit-scrollbar-track {
-    border-radius: 10px;  
+    border-radius: 3px;  
 }
 
 
