@@ -50,4 +50,11 @@ mat-form-field{
 input{
     color: rgb(0, 88, 124);
 }
-
+.register{
+    text-align: center;
+    margin-top: 20px;
+}
+.register:hover{
+    color:blue;
+    cursor: pointer;
+}

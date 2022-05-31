@@ -3,22 +3,38 @@
        
         <mat-card fxFlex="100%" fxLayoutAlign="center" >
                 
-                <form fxLayout="column" class="login-form" fxFlex="50%">
+                <form fxLayout="column" class="login-form" fxFlex="50%" method="post">
                     <h1 fxLayoutAlign="center"><img class="logo" src="../../../assets/imagenes/logo.jpg"></h1>
-                    <p fxLayoutAlign="center">Iniciar sesión</p>
+                    <p fxLayoutAlign="center"><b>Iniciar sesión</b></p>
                     <mat-form-field >
-                    <mat-label>Usuario</mat-label>
-                    <input matInput placeholder="Usuario" value="">
+
+                    <mat-label>Email</mat-label>
+                    <input 
+                    matInput placeholder="ingrese su email" 
+                    [(ngModel)]="email"
+                    value=""
+                    name="email"
+                    required="required"
+                    />
+
                     <mat-icon matSuffix>account_circle</mat-icon>
                     </mat-form-field>
                 
                     <mat-form-field>
                     <mat-label>Contraseña</mat-label>
-                    <input matInput placeholder="Contraseña" value="" type="password" >
+                    <input 
+                    matInput placeholder="ingrese su contraseña" 
+                    name="password" 
+                    type="password" 
+                    [(ngModel)]="password"
+                    required="required" 
+                    />
+
                     <mat-icon matSuffix>key</mat-icon>
                     </mat-form-field>
                     
-                    <button mat-button mat-raised-button href="#dashBoard" routerLink="/dashBoard">Login</button>
+                    <button mat-button mat-raised-button type="submit" (click)="login()" href="#dashBoard" routerLink="/dashBoard">Login</button>
+                    <mat-label class="register" href="#register" routerLink="/register">Registrarse</mat-label>
                 </form>
         </mat-card>
     </div>
