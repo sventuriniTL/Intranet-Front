@@ -12,6 +12,8 @@ import { NavBarComponent } from './shared/nav-bar/nav-bar.component';
 import { SideBarComponent } from './shared/side-bar/side-bar.component';
 import { MainContentComponent } from './shared/main-content/main-content.component';
 import { ChartsModule } from './charts.module';
+import {LayoutModule} from '@angular/cdk/layout';
+
 
 @NgModule({
   declarations: [
@@ -30,6 +32,9 @@ import { ChartsModule } from './charts.module';
     MaterialModule,
     FlexLayoutModule,
     ChartsModule,
+    LayoutModule
+    
+    
   ],
   providers: [],
   bootstrap: [AppComponent]
