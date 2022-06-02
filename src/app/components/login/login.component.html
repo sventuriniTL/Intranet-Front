@@ -3,18 +3,18 @@
        
         <mat-card fxFlex="100%" fxLayoutAlign="center" >
                 
-                <form fxLayout="column" class="login-form" fxFlex="50%" method="post">
+                <form fxLayout="column" class="login-form" fxFlex="50%" method="post"
+                    [formGroup]="forma" (ngSubmit)="login()">
+                    
                     <h1 fxLayoutAlign="center"><img class="logo" src="../../../assets/imagenes/logo.jpg"></h1>
                     <p fxLayoutAlign="center"><b>Iniciar sesión</b></p>
                     <mat-form-field >
 
                     <mat-label>Email</mat-label>
-                    <input 
-                    matInput placeholder="ingrese su email" 
-                    [(ngModel)]="email"
-                    value=""
-                    name="email"
-                    required="required"
+                    <input matInput
+                    formControlName="email"
+                    placeholder="ingrese su email" 
+                    
                     />
 
                     <mat-icon matSuffix>account_circle</mat-icon>
@@ -22,21 +22,24 @@
                 
                     <mat-form-field>
                     <mat-label>Contraseña</mat-label>
-                    <input 
-                    matInput placeholder="ingrese su contraseña" 
-                    name="password" 
-                    type="password" 
-                    [(ngModel)]="password"
-                    required="required" 
+                    <input matInput type="password"
+                    formControlName="password"
+                    placeholder="ingrese su contraseña" 
                     />
 
                     <mat-icon matSuffix>key</mat-icon>
                     </mat-form-field>
                     
-                    <button mat-button mat-raised-button type="submit" (click)="login()" >Login</button>
+
+                    <button mat-button mat-raised-button type="submit" href="#dashBoard" >Login</button>
+
                     <mat-label class="register" href="#register" routerLink="/register">Registrarse</mat-label>
+                <br> 
+                    <p>Form value: {{ forma.value | json }}</p>
+                    <p>Form status: {{ forma.status | json }}</p>
                 </form>
         </mat-card>
+
     </div>
     <div fxFlex="50%" fxLayoutAlign="center center" class="imagen-div"><img class="img-fluid" src="../../../assets/imagenes/TECNOLAB0373.jpg" ></div>
 </div>
