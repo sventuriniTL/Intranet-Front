@@ -4,7 +4,6 @@ import { DashboardComponent } from './shared/dashboard/dashboard.component';
 import { LoginComponent } from './components/login/login.component';
 import { PowerbiComponent } from './components/powerbi/powerbi.component';
 import { RegisterComponent } from './components/register/register.component';
-import { AdministracionComponent } from './components/administracion/administracion.component';
 import { DashboardAdministraiconComponent } from './shared/dashboard-administraicon/dashboard-administraicon.component';
 
 export const routes: Routes = [
@@ -15,7 +14,6 @@ export const routes: Routes = [
   { path:'dashboardAdmin', component:DashboardAdministraiconComponent },
   
 ];
-
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
