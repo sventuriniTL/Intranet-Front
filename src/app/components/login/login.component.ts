@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { routes } from 'src/app/app-routing.module';
 
 @Component({
   selector: 'app-login',
@@ -24,5 +25,7 @@ export class LoginComponent {
     console.log(this.password);
     console.log(this.userLog);
   }
+
+
 }
  
