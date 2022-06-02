@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators, FormArray, FormControl, AbstractControl } from '@angular/forms';
 import { Router } from '@angular/router';
 
+
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -10,6 +11,7 @@ import { Router } from '@angular/router';
 export class LoginComponent {
   email!: string;
   password!: string;
+
 
   forma: FormGroup = new FormGroup({
     email: new FormControl(''),
@@ -42,6 +44,7 @@ export class LoginComponent {
 
 
   login() {
+
     // this.userLog.email = this.email;
     // this.userLog.password = this.password;
 
@@ -70,5 +73,6 @@ export class LoginComponent {
       }
 
   }
+
 }
  
