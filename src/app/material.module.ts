@@ -13,6 +13,12 @@ import {MatGridListModule} from '@angular/material/grid-list';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import {MatTableModule} from '@angular/material/table';
+import {MatButtonToggleModule} from '@angular/material/button-toggle';
+import {MatSelectModule} from '@angular/material/select';
+import {MatListModule} from '@angular/material/list';
+
+
+
 
 
 
@@ -37,7 +43,10 @@ import {MatTableModule} from '@angular/material/table';
     MatGridListModule,
     MatSnackBarModule,
     MatProgressSpinnerModule,
-    MatTableModule
+    MatTableModule,
+    MatButtonToggleModule,
+    MatSelectModule,
+    MatListModule
     
   ]
   
