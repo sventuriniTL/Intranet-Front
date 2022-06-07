@@ -1,1 +1,21 @@
-<p>inicio works!</p>
+
+<div class="titulo">
+    <h1>
+        Bienvenidos a<span style="color:rgb(0, 88, 124);"> Intranet</span><span> 2.0</span>
+    </h1>
+</div>
+<div class="carousel">
+<ngb-carousel  *ngIf="images">
+    <ng-template ngbSlide>
+        <div class="picsum-img-wrapper">
+            <img [src]="images[0]" alt="Random second slide">
+        </div>
+    </ng-template>
+    <ng-template ngbSlide>
+        <div class="picsum-img-wrapper">
+            <img [src]="images[1]"  alt="Random third slide">
+        </div>
+    </ng-template>
+  </ngb-carousel>
+    <div>
+</div>

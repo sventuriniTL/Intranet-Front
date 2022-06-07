@@ -1,0 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
+.titulo{
+    font-family: 'Bebas Neue', cursive;
+    text-align: center;
+    margin-bottom: -14px;
+}
+.carousel{
+    width: 100%;
+    text-align: center;
+    
+}
