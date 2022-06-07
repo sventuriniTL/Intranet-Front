@@ -11,6 +11,9 @@ import { ReportesComponent } from './reportes/reportes.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { UsuariosComponent } from './usuarios/usuarios.component';
 import { PowerbiComponent } from './powerbi/powerbi.component';
+import { NgbModule, NgbCarouselModule } from '@ng-bootstrap/ng-bootstrap';
+import { Powerbi2Component } from './powerbi2/powerbi2.component';
+
 
 
 @NgModule({
@@ -21,12 +24,16 @@ import { PowerbiComponent } from './powerbi/powerbi.component';
     NavbarComponent,
     UsuariosComponent,
     SideBarComponent,
-    PowerbiComponent
+    PowerbiComponent,
+    Powerbi2Component,
+    
   ],
   imports: [
     CommonModule,
     Dashboard1RoutingModule,
-    MaterialModule
+    MaterialModule,
+    NgbCarouselModule,
+    NgbModule,
   ]
 })
 export class Dashboard1Module { }

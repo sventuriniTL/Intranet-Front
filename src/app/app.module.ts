@@ -17,7 +17,6 @@ import { MainContentComponent } from './components/main-content/main-content.com
 import { ChartsModule } from './charts.module';
 import {LayoutModule} from '@angular/cdk/layout';
 import { RegisterComponent } from './components/register/register.component';
-import { PowerbiComponent } from './components/dashboard1/powerbi/powerbi.component';
 import { AdministracionComponent } from './components/administracion/administracion.component';
 import { DashboardAdministraiconComponent } from './shared/dashboard-administraicon/dashboard-administraicon.component';
 import { LoginServiceService } from './services/login-service.service';
@@ -60,6 +59,8 @@ import { MatButtonModule } from '@angular/material/button';
     MatMenuModule,
     MatIconModule,
     MatButtonModule,
+
+   
     
     
   ],

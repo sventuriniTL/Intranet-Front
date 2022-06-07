@@ -3,8 +3,8 @@ import { RouterModule, Routes } from '@angular/router';
 import { Dashboard1Component } from './dashboard1.component';
 import { InicioComponent } from './inicio/inicio.component';
 import { PowerbiComponent } from './powerbi/powerbi.component';
+import { Powerbi2Component } from './powerbi2/powerbi2.component';
 import { ReportesComponent } from './reportes/reportes.component';
-import { SideBarComponent } from './sidebar/sidebar.component';
 import { UsuariosComponent } from './usuarios/usuarios.component';
 
 const routes: Routes = [
@@ -14,6 +14,7 @@ const routes: Routes = [
       { path: 'usuarios', component: UsuariosComponent },
       { path: 'reportes', component: ReportesComponent },
       { path: 'powerBi', component: PowerbiComponent },
+      { path: 'powerBi2', component: Powerbi2Component },
     ]
   }
 ];
