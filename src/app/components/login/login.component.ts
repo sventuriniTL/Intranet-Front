@@ -5,8 +5,8 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 
 
 const arrayDeRutas = [
-  'principal',
-  'principal'
+  'dashboard1',
+  'dashboard1'
 ];
 const arrayDeMails = [
   'administracion@tecnolab.com.ar',
@@ -84,7 +84,7 @@ export class LoginComponent {
   fakeLoading(ruta){
     this.loading = true;
     setTimeout(() => {
-      this.router.navigate(['/' + ruta]);
+      this.router.navigate([ruta]);
       this.loading = false
       
     }, 1500)
