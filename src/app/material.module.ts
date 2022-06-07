@@ -10,6 +10,13 @@ import {MatProgressBarModule} from '@angular/material/progress-bar';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatDividerModule} from '@angular/material/divider';
 import {MatGridListModule} from '@angular/material/grid-list';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+import {MatTableModule} from '@angular/material/table';
+
+
+
+
 
 
 @NgModule({
@@ -28,6 +35,9 @@ import {MatGridListModule} from '@angular/material/grid-list';
     MatSidenavModule,
     MatDividerModule,
     MatGridListModule,
+    MatSnackBarModule,
+    MatProgressSpinnerModule,
+    MatTableModule
     
   ]
   

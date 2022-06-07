@@ -1,37 +1,34 @@
-import { FormGroup, FormBuilder, Validators, FormArray, FormControl, AbstractControl } from '@angular/forms';
+import { FormGroup, FormBuilder, Validators, FormControl } from '@angular/forms';
 import { Router } from '@angular/router';
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 
 const arrayDeRutas = [
-  'dashboardAdmin',
-  'dashBoard'
+  'principal',
+  'principal'
 ];
 const arrayDeMails = [
   'administracion@tecnolab.com.ar',
   'direccion@tecnolab.com.ar'
 ];
 
-
-
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css']
+  styleUrls: ['./login.component.css'],
 })
 export class LoginComponent {
-  email!: string;
-  password!: string;
-
-
+  loading = false;
   forma: FormGroup = new FormGroup({
-    email: new FormControl(''),
-    password: new FormControl('')
-
+  email: new FormControl(''),
+  password: new FormControl('')
   });
 
   constructor(private router: Router,
-              private fb: FormBuilder)
+              private fb: FormBuilder,
+              private _snackBar: MatSnackBar,
+              )
               {
                 this.crearFormulario();
               }
@@ -50,15 +47,15 @@ export class LoginComponent {
           if ( control instanceof FormGroup ) {
             Object.values( control.controls ).forEach( control => control.markAsTouched()); 
           } else {
-            control.markAsTouched();
+            control.markAsTouched()
           }
+          this.error();
           return this.forma.invalid;
         });       
       } else {  
-
-        var emailUser = this.forma.getRawValue().email
-        this.enrutador(emailUser)  
-
+        
+        this.enrutador(this.forma.value.email)  
+        localStorage.setItem("email",this.forma.value.email)
       }
   }
 
@@ -73,8 +70,24 @@ export class LoginComponent {
   private asignadorDeRuta(emailUser: string, emailList: string[], i: number, rutas: string[]) {
     if (emailUser == emailList[i]) {
     let ruta = rutas[i];
-    this.router.navigate(['/' + ruta]);
+    this.fakeLoading(ruta);
     }
+  }
+
+  error(){
+    this._snackBar.open('Usuario o contraseña invalidos',':(',{
+      duration:5000,
+      horizontalPosition: 'center',
+      verticalPosition:'bottom'
+    })
+  }
+  fakeLoading(ruta){
+    this.loading = true;
+    setTimeout(() => {
+      this.router.navigate(['/' + ruta]);
+      this.loading = false
+      
+    }, 1500)
   }
 }
 

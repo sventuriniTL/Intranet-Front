@@ -1,6 +1,10 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <mat-sidenav-container>  
-    <mat-sidenav  #sidebar mode="side" opened >    
+    <mat-sidenav #drawer class="sidenav" fixedInViewport
+    [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+    mode='side'
+    [opened]="(isHandset$ | async) === false">>    
     <h1 fxLayoutAlign="center"><img fxLayoutAlign="center" src="../../../assets/imagenes/logo2.png" alt="" class="logo"></h1>  
     <mat-divider></mat-divider>
     <div class="usuario">
@@ -8,22 +12,38 @@
         <h4 class="name">{{nameUser}}</h4>
         <p class="email">{{emailUser}}</p>
     </div>
-    <a href="dashBoard"><i class="fa fa-fw fa-home"></i> Home</a>
-    <a href="#services"><i class="fa fa-fw fa-wrench"></i> Admistracion</a>
-    <a href="#contact"><i class="bi bi-activity"></i> Comercial</a>
-    <a href="#contact"><i class="fa fa-fw fa-envelope"></i> Dirección Técnica</a>
-    <a href="#contact"><i class="fa fa-fw fa-envelope"></i> Compras locales e importaciones</a>
-    <a href="#contact"><i class="fa fa-fw fa-envelope"></i> Depósito y distribucion</a>
-
+    <div class="dividers">
+     
+    <a href="dashBoard"><i class="fa-solid fa-house"></i> Home</a>
+    
+    <a href="#services"><i class="fa-solid fa-book-bookmark"></i> Admistracion</a>
+    
+    <a href="#contact"><i class="fa-solid fa-business-time"></i> Direccion</a>
+    
+    <a href="#contact"><i class="fa-solid fa-chart-line"></i> PowerBi-1</a>
+    
+    <a href="#contact"><i class="fa-solid fa-chart-pie"></i> PowerBi-2</a>
+    
+    </div>
     </mat-sidenav>
     <mat-sidenav-content>
         <div class="content">
             <nav class="navbar">
-                <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
-                    <mat-icon (click)="sidebar.toggle()">menu</mat-icon>
+                <button
+                    type="button"
+                    aria-label="Toggle sidenav"
+                    mat-icon-button
+                    (click)="drawer.toggle()"
+                   >
+                <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
                 </button>
-                <app-nav-bar></app-nav-bar>
             </nav>
         </div>
+        <app-dashboard></app-dashboard>
     </mat-sidenav-content>
 </mat-sidenav-container>
+
+<script>
+    let btn = document.querySelector("#btn");
+    let sidebar = document.querySelector(".sidebar")
+</script>

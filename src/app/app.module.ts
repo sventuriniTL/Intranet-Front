@@ -20,6 +20,12 @@ import { RegisterComponent } from './components/register/register.component';
 import { PowerbiComponent } from './components/powerbi/powerbi.component';
 import { AdministracionComponent } from './components/administracion/administracion.component';
 import { DashboardAdministraiconComponent } from './shared/dashboard-administraicon/dashboard-administraicon.component';
+import { LoginServiceService } from './services/login-service.service';
+import { MatGridListModule } from '@angular/material/grid-list';
+import { MatCardModule } from '@angular/material/card';
+import { MatMenuModule } from '@angular/material/menu';
+import { MatIconModule } from '@angular/material/icon';
+import { MatButtonModule } from '@angular/material/button';
 
 
 @NgModule({
@@ -50,10 +56,15 @@ import { DashboardAdministraiconComponent } from './shared/dashboard-administrai
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
+    MatGridListModule,
+    MatCardModule,
+    MatMenuModule,
+    MatIconModule,
+    MatButtonModule,
     
     
   ],
-  providers: [],
+  providers: [LoginServiceService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

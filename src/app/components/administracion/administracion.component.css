@@ -9,3 +9,7 @@ mat-grid-tile {
     margin-top: 10px;
     margin-bottom: 10px;
   }
+  table {
+    width: 100%;
+    margin-top: 10px;
+  }
