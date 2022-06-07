@@ -3,7 +3,7 @@
 <mat-sidenav-container>  
     <mat-sidenav #drawer class="sidenav" fixedInViewport
     [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
-    mode='side'
+    [mode]="(isHandset$ | async ) ? 'over':'side'"
     [opened]="(isHandset$ | async) === false">>    
     <h1 fxLayoutAlign="center"><img fxLayoutAlign="center" src="../../../assets/imagenes/logo2.png" alt="" class="logo"></h1>  
     <mat-divider></mat-divider>
