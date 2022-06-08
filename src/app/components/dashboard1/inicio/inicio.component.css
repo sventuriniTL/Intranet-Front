@@ -8,5 +8,6 @@
 .carousel{
     width: 100%;
     text-align: center;
+    box-shadow: 40px 10px 20px rgba(97, 97, 97, 0.521);
     
 }
