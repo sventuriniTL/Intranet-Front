@@ -5,8 +5,8 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 
 
 const arrayDeRutas = [
-  'dashboard1',
-  'dashboard1'
+  'home',
+  'home'
 ];
 const arrayDeMails = [
   'administracion@tecnolab.com.ar',
