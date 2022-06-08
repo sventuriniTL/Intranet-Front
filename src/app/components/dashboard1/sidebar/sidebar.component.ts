@@ -17,19 +17,16 @@ import {MediaMatcher} from '@angular/cdk/layout';
 export class SideBarComponent {
   mobileQuery: MediaQueryList;
   @ViewChild('sidenav') sidenav!: MatSidenav;
-
   reason = '';
-
   close(reason: string) {
     this.reason = reason;
     this.sidenav.close();
   }
-  
 
 
   private _mobileQueryListener: () => void;
 
-  constructor(changeDetectorRef: ChangeDetectorRef, media: MediaMatcher) {
+  constructor(changeDetectorRef: ChangeDetectorRef, media: MediaMatcher,private routes: Router, private breakpointObserver: BreakpointObserver, private data: LoginComponent) {
     this.mobileQuery = media.matchMedia('(max-width: 600px)');
     this._mobileQueryListener = () => changeDetectorRef.detectChanges();
     this.mobileQuery.addListener(this._mobileQueryListener);
@@ -39,4 +36,44 @@ export class SideBarComponent {
     this.mobileQuery.removeListener(this._mobileQueryListener);
   }
 
+  email = localStorage.getItem("email");
+  showFiller = false;
+  imgUser!: string;
+  nameUser!: string;
+  emailUser!: string;
+
+  isHandset$: Observable<boolean> = this.breakpointObserver.observe(Breakpoints.Handset)
+    .pipe(
+      map(result => result.matches),
+      shareReplay()
+    );
+
+  ngOnInit(): void {
+  this.userMatch(this.email);
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  private userMatch(email:string|null) {
+    if (email === 'administracion@tecnolab.com.ar') {
+      this.imgUser = '../../../assets/imagenes/Gustavo.png';
+      this.nameUser = 'Gustavo Auteri';
+      this.emailUser = 'gauteri@tecnolab.com.ar';
+    }
+    else if (email === 'direccion@tecnolab.com.ar') {
+      this.imgUser = '../../../assets/imagenes/MicrosoftTeams-image.png';
+      this.nameUser = 'Roberto Faivovich';
+      this.emailUser = 'rfaivovich@tecnolab.com.ar';
+    }
+  }
 }

@@ -15,13 +15,14 @@
   }
   
   h1.example-app-name {
-    margin-left: 8px;
+    margin-left: 20px;
   }
   
   .example-sidenav-container {
     /* When the sidenav is not fixed, stretch the sidenav container to fill the available space. This
        causes `<mat-sidenav-content>` to act as our scrolling element for desktop layouts. */
     flex: 1;
+    
   }
   
   .example-is-mobile .example-sidenav-container {
@@ -29,5 +30,46 @@
        `<body>` to be our scrolling element for mobile layouts. */
     flex: 1 0 auto;
   }
-  .powerbi{
-  }
+  .imgUser{
+    border-radius: 50%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    width: 100px;
+    height: 100px;
+}
+.usuario{
+  text-align: center;
+  font-weight: 800;
+  margin-bottom: 18px;
+}
+.name{
+  margin-top: -6px;
+  color: rgb(15, 15, 15);
+  font-weight: lighter;
+  font-size: 18px;
+}
+.email{
+  margin-top: -5px;
+  color:rgba(0, 0, 0, 0.6);
+  margin-bottom: 20px;
+  font-size: 14px;
+}
+mat-nav-list a{
+  box-shadow: -10px 4px 10px rgba(56, 56, 56, 0.527);
+  margin-top: 12px;
+  margin-left: 5px;
+  border-radius: 8%;
+  text-align: center;
+  border-radius: 12px;
+  width: 181px;
+  
+}
+mat-nav-list a:hover{
+  color:rgba(0, 0, 255, 0.74);
+  background-color: rgba(217, 217, 217, 0.381);
+  
+}
+mat-nav-list i{
+  margin-right: 0px;
+  transform: translateX(-50%)
+}
