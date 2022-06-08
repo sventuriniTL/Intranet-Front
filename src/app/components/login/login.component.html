@@ -2,7 +2,7 @@
     <div fxFlex = "50%" fxFlex.xs="100%" fxLayoutAlign="center" class="div-izq">
        
         <mat-card  fxFlex="100%" fxLayoutAlign="center" >
-            <mat-spinner *ngIf="loading" class="spiner" diameter="50"></mat-spinner>
+            <mat-spinner *ngIf="loading" diameter="50"></mat-spinner>
 
                 <form *ngIf="!loading" fxLayout="column" class="login-form" fxFlex="50%" method="post"
                     [formGroup]="forma" (ngSubmit)="login()">

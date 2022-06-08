@@ -59,3 +59,7 @@ input{
     color:blue;
     cursor: pointer;
 }
+
+mat-spinner {
+    transform:translateY(450%);
+}
