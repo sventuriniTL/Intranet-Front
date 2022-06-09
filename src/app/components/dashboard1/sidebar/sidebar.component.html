@@ -1,10 +1,10 @@
 
 <div class="example-container" [class.example-is-mobile]="mobileQuery.matches">
-    <mat-toolbar color="primary" class="example-toolbar">
-        <button mat-icon-button (click)="snav.toggle()">
+    <mat-toolbar style="background-color:rgba(0, 88, 126, 0.793); height: 65px;" class="example-toolbar">
+        <button style="color:aliceblue" mat-icon-button (click)="snav.toggle()">
             <mat-icon>menu</mat-icon>
         </button>
-        <h1 class="example-app-name">Intranet 2.0</h1>
+        <h1 class="example-app-name" style="color:aliceblue">Intranet 2.0</h1>
         <span class="example-spacer"></span>
         
         
@@ -36,7 +36,7 @@
         
     </mat-toolbar>
     <mat-sidenav-container class="example-sidenav-container" [style.marginTop.px]="mobileQuery.matches ? 56 : 0">
-        <mat-sidenav #snav [ngStyle]="{ 'width.em': 13 }"   id="sidenav" [fixedInViewport]="mobileQuery.matches"
+        <mat-sidenav #snav [ngStyle]="{ 'width.em': 16 }"   id="sidenav" [fixedInViewport]="mobileQuery.matches"
             fixedTopGap="56" closed>
             <div class="usuario">
                 <img src={{imgUser}} alt="" class="imgUser">

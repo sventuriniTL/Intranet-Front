@@ -1,123 +1,129 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;600&display=swap');
 
 .example-container {
-    display: flex;
-    flex-direction: column;
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-  }
-  
-.example-is-mobile .example-toolbar {
-    position: fixed;
-    /* Make sure the toolbar will stay on top of the content as it scrolls past. */
-    z-index: 2;
-  }
-  
-h1.example-app-name {
-    margin-left: 20px;
-  }
-  
-.example-sidenav-container {
-    /* When the sidenav is not fixed, stretch the sidenav container to fill the available space. This
-       causes `<mat-sidenav-content>` to act as our scrolling element for desktop layouts. */
-    flex: 1;
-    
-  }
-  
-.example-is-mobile .example-sidenav-container {
-    /* When the sidenav is fixed, don't constrain the height of the sidenav container. This allows the
-       `<body>` to be our scrolling element for mobile layouts. */
-    flex: 1 0 auto;
-  }
-.imgUser{
-    border-radius: 50%;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    width: 100px;
-    height: 100px;
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
 }
-.imgUserNav{
+
+.example-is-mobile .example-toolbar {
+  position: fixed;
+  /* Make sure the toolbar will stay on top of the content as it scrolls past. */
+  z-index: 2;
+}
+
+h1.example-app-name {
+  margin-left: 20px;
+}
+
+.example-sidenav-container {
+  /* When the sidenav is not fixed, stretch the sidenav container to fill the available space. This
+       causes `<mat-sidenav-content>` to act as our scrolling element for desktop layouts. */
+  flex: 1;
+
+}
+
+.example-is-mobile .example-sidenav-container {
+  /* When the sidenav is fixed, don't constrain the height of the sidenav container. This allows the
+       `<body>` to be our scrolling element for mobile layouts. */
+  flex: 1 0 auto;
+}
+
+.imgUser {
+  border-radius: 50%;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  width: 100px;
+  height: 100px;
+}
+
+.imgUserNav {
   border-radius: 50%;
   width: 40px;
   height: 40px;
   margin-left: 0px;
 
 }
-.usuario{
+
+.usuario {
   text-align: center;
   font-weight: 800;
   margin-bottom: 18px;
 }
-.name{
+
+.name {
   margin-top: -6px;
   color: rgb(15, 15, 15);
   font-weight: lighter;
   font-size: 18px;
 }
-.nameNav{
+
+.nameNav {
   font-size: 15px;
-  color:rgb(255, 255, 255);
+  color: rgb(255, 255, 255);
   display: inline-block;
   margin-left: 8px;
   margin-right: 0px;
 
 }
-.buttonNav{
+
+.buttonNav {
   width: auto;
   height: 55px;
   margin-bottom: 4px;
   box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.214);
 }
 
-.email{
+.email {
   margin-top: -5px;
-  color:rgba(0, 0, 0, 0.6);
+  color: rgba(0, 0, 0, 0.6);
   margin-bottom: 20px;
   font-size: 14px;
 }
-mat-nav-list a{
+
+mat-nav-list a {
   font-family: 'Montserrat', sans-serif;
-  box-shadow: -10px 4px 10px rgba(56, 56, 56, 0.527);
   display: inline-block;
+  font-weight: 500;
   margin-top: 10px;
   margin-left: 5px;
-  border-radius: 8%;
   text-align: center;
-  border-radius: 12px;
-  width: 181px;
+  width: 100%;
   transition: all 0.3s ease;
 }
-.buton1Nav:hover{
-  transition: all 0.4s ease;
-  color:rgba(255, 255, 255, 0.915);
-  background-color: rgba(17, 0, 255, 0.655);
-  border-radius: 15px;
-}
-.buton2Nav:hover{
-  transition: all 0.4s ease;
-  color:rgba(255, 255, 255, 0.915);
-  background-color: rgba(17, 0, 255, 0.655);
-  border-radius: 15px;
-}
-.buton3Nav:hover{
-  transition: all 0.4s ease;
-  color:rgba(255, 255, 255, 0.915);
-  background-color: rgba(17, 0, 255, 0.655);
-  border-radius: 15px;
+
+mat-nav-list a:hover {
+  color: rgba(0, 88, 126, 0.915);
+  background: linear-gradient(to right,rgba(102, 114, 120, 0.334), white);
 }
 
-mat-nav-list a:hover{
-  color:rgba(255, 255, 255, 0.915);
-  background-color: rgba(17, 0, 255, 0.655);
-  
+.buton1Nav:hover {
+  transition: all 0.4s ease;
+  color: rgba(255, 255, 255, 0.915);
+  background-color: rgba(0, 88, 126, 0.655);
 }
-mat-nav-list i{
+
+.buton2Nav:hover {
+  transition: all 0.4s ease;
+  color: rgba(255, 255, 255, 0.915);
+  background-color: rgba(0, 88, 126, 0.655);
+}
+
+.buton3Nav:hover {
+  transition: all 0.4s ease;
+  color: rgba(255, 255, 255, 0.915);
+  background-color: rgba(0, 88, 126, 0.655);
+}
+
+mat-nav-list i {
   margin-right: 0px;
   transform: translateX(-50%)
 }
+
 .example-spacer {
   flex: 1 1 auto;
 }
