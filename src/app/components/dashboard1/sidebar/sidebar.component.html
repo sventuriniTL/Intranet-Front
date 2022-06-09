@@ -2,13 +2,14 @@
 <div class="example-container" [class.example-is-mobile]="mobileQuery.matches">
     <mat-toolbar style="background-color:rgba(0, 88, 126, 0.793); height: 60px; " class="example-toolbar">
         <button style="color:aliceblue" mat-icon-button (click)="snav.toggle()">
-            <mat-icon>menu</mat-icon>
+            <mat-icon style="font-size:30px;">menu</mat-icon>
         </button>
         <h1 class="example-app-name" style="color:aliceblue">Intranet 2.0</h1>
         <span class="example-spacer"></span>
-        
-        
-        <button mat-stroked-button class="buttonNav"  style="background-color:rgba(0, 88, 126, 0.523)" [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu"> 
+
+
+              
+       <button mat-stroked-button class="buttonNav"  style="background-color:rgba(0, 88, 126, 0.523)" [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu"> 
         <div class="contentButtonNav">
             <div>
                 <img src={{imgUser}} alt="" class="imgUserNav">
