@@ -8,7 +8,7 @@ import { RegisterComponent } from './components/register/register.component';
 export const routes: Routes = [
   { path: '', redirectTo: 'login', pathMatch: 'full' },
   { path: 'login', component: LoginComponent },
-  { path: 'home', loadChildren: () => import('./components/dashboard1/dashboard1.module').then(x => x.Dashboard1Module) },
+  { path: 'home', loadChildren: () => import('./components/dashboard1/dashboard1.module').then(x => x.Dashboard1Module)},
   { path: '**', redirectTo: 'login', pathMatch: 'full' },
   { path: 'register', component: RegisterComponent, pathMatch: 'full' },
   { path: 'powerBi', component: PowerbiComponent, pathMatch: 'full' },
