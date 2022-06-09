@@ -1,5 +1,8 @@
-.powerbi{
-    width: 100%;
-    height: 1300px; 
+.powerbiConteiner{
     
+    height: 99%; 
+}
+.powerbi{
+    width:100%;
+    height: 100%;
 }
