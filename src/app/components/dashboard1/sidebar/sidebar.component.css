@@ -64,7 +64,7 @@ h1.example-app-name {
 
 .nameNav {
   font-size: 15px;
-  color: rgb(255, 255, 255);
+  color: rgba(233, 233, 233, 0.967);
   display: inline-block;
   margin-left: 8px;
   margin-right: 0px;
@@ -73,9 +73,9 @@ h1.example-app-name {
 
 .buttonNav {
   width: auto;
-  height: 55px;
-  margin-bottom: 4px;
-  box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.214);
+  height: 52px;
+  margin-bottom: 2.6git sstatuspx;
+ 
 }
 
 .email {
