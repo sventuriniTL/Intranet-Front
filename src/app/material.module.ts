@@ -16,6 +16,8 @@ import {MatTableModule} from '@angular/material/table';
 import {MatButtonToggleModule} from '@angular/material/button-toggle';
 import {MatSelectModule} from '@angular/material/select';
 import {MatListModule} from '@angular/material/list';
+import {MatMenuModule} from '@angular/material/menu';
+
 
 
 
@@ -46,7 +48,8 @@ import {MatListModule} from '@angular/material/list';
     MatTableModule,
     MatButtonToggleModule,
     MatSelectModule,
-    MatListModule
+    MatListModule,
+    MatMenuModule
     
   ]
   

@@ -5,9 +5,38 @@
             <mat-icon>menu</mat-icon>
         </button>
         <h1 class="example-app-name">Intranet 2.0</h1>
+        <span class="example-spacer"></span>
+        
+        
+        <button mat-stroked-button class="buttonNav" [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu"> 
+        <div class="contentButtonNav">
+            <div>
+                <img src={{imgUser}} alt="" class="imgUserNav">
+                <h4 class="nameNav">{{nameUser}}</h4>
+            </div>
+        </div>
+        </button>
+        <mat-menu #menu="matMenu">
+            <button class="buton1Nav" mat-menu-item routerLink="/login">
+              <mat-icon>logout</mat-icon>
+              <span>cerrar sesión</span>
+            </button>
+            <button class="buton2Nav"mat-menu-item>
+              <mat-icon>password</mat-icon>
+              <span>cambio de contraseña</span>
+            </button>
+            <button class="buton3Nav"mat-menu-item>
+              <mat-icon>notifications</mat-icon>
+              <span>notificaciones</span>
+            </button>
+          </mat-menu>
+       
+            
+        
+        
     </mat-toolbar>
     <mat-sidenav-container class="example-sidenav-container" [style.marginTop.px]="mobileQuery.matches ? 56 : 0">
-        <mat-sidenav #snav [ngStyle]="{ 'width.em': 12 }"   id="sidenav" [fixedInViewport]="mobileQuery.matches"
+        <mat-sidenav #snav [ngStyle]="{ 'width.em': 13 }"   id="sidenav" [fixedInViewport]="mobileQuery.matches"
             fixedTopGap="56" closed>
             <div class="usuario">
                 <img src={{imgUser}} alt="" class="imgUser">
