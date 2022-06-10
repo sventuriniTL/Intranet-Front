@@ -17,6 +17,10 @@ import {MatButtonToggleModule} from '@angular/material/button-toggle';
 import {MatSelectModule} from '@angular/material/select';
 import {MatListModule} from '@angular/material/list';
 import {MatMenuModule} from '@angular/material/menu';
+import {MatTabsModule} from '@angular/material/tabs';
+import {MatPaginatorModule} from '@angular/material/paginator';
+
+
 
 
 
@@ -49,7 +53,9 @@ import {MatMenuModule} from '@angular/material/menu';
     MatButtonToggleModule,
     MatSelectModule,
     MatListModule,
-    MatMenuModule
+    MatMenuModule,
+    MatTabsModule,
+    MatPaginatorModule,
     
   ]
   
