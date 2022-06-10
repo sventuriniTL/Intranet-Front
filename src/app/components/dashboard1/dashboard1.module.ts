@@ -13,6 +13,7 @@ import { UsuariosComponent } from './usuarios/usuarios.component';
 import { PowerbiComponent } from './powerbi/powerbi.component';
 import { NgbModule, NgbCarouselModule } from '@ng-bootstrap/ng-bootstrap';
 import { Powerbi2Component } from './powerbi2/powerbi2.component';
+import { ClientesConDificultadesComponent } from './clientes-con-dificultades/clientes-con-dificultades.component';
 
 
 
@@ -26,6 +27,7 @@ import { Powerbi2Component } from './powerbi2/powerbi2.component';
     SideBarComponent,
     PowerbiComponent,
     Powerbi2Component,
+    ClientesConDificultadesComponent,
     
   ],
   imports: [
@@ -34,6 +36,8 @@ import { Powerbi2Component } from './powerbi2/powerbi2.component';
     MaterialModule,
     NgbCarouselModule,
     NgbModule,
+  
+
   ]
 })
 export class Dashboard1Module { }
