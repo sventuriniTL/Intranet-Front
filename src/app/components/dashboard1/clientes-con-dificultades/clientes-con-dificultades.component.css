@@ -1,6 +1,15 @@
-table {
-    width: 1300px;
-  }
+.tableDiv{
+  width: 100%;
+}
+table{
+  width: 90%;
+  margin: 0 auto;
+}
+
+::ng-deep .mat-sort-header-arrow {
+  color: rgb(0,88,126);
+}
+
 div th{
   color: rgb(255, 255, 255);
   font-weight:500;
@@ -14,17 +23,17 @@ div th{
 }
 
 .mat-column-clI_ID{
- padding-right: 40px;
+ padding-right: 25px;
 }
 .mat-column-clI_COD{
-  width: 7%;
+  padding-right: 25px;
 }
 .mat-column-clI_NOM{
   width: 23%;
 }
 .mat-column-fecha{
-  width: 8%;
+  width: 10%;
 }
 .mat-column-usuario{
-  padding-right: 30px;
+  padding-right: 25px;
 }

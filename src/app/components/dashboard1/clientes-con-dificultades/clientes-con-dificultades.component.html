@@ -1,17 +1,17 @@
 
 
 
-<div fxLayoutAlign="center center" style="width:30%; margin-left: 34px;">
+<div style="width:30%; margin-left: 34px;">
   <mat-form-field appearance="standard">
     <mat-label>Filter</mat-label>
     <input matInput (keyup)="applyFilter($event)" placeholder="Ej. razon social" #input>
   </mat-form-field>
 </div> 
-<div fxLayoutAlign="center center" >
+<div class="tableDiv">
 <table mat-table [dataSource]="dataSource" matSort  class="mat-elevation-z8 table-striped " >
   
-    <!--- Note that these columns can be defined in any order.
-          The actual rendered columns are set as a property on the row definition" -->
+    <!--- Tenga en cuenta que estas columnas se pueden definir en cualquier orden.
+          Las columnas representadas reales se establecen como una propiedad en el ts donde displayedColumns" -->
   
           <ng-container matColumnDef="clI_ID" >
               <th mat-header-cell *matHeaderCellDef mat-sort-header>Nro</th>
