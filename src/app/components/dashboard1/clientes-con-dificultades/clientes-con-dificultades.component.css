@@ -7,7 +7,7 @@ table{
 }
 
 ::ng-deep .mat-sort-header-arrow {
-  color: rgb(0,88,126);
+  color: rgb(41, 126, 163);
 }
 
 div th{

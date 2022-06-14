@@ -24,7 +24,7 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 }
 
 *::-webkit-scrollbar-thumb {
-    background-color: rgb(50, 50, 50);
+    background-color: rgb(255 255 255);
     border-radius: 5px;
     border: 1rem solid rgba(0, 58, 81, 0.386);
 }
