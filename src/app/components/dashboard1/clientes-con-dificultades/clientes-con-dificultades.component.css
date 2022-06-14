@@ -1,12 +1,30 @@
 table {
-    width: 100%;
+    width: 1300px;
   }
-  
-  .mat-form-field {
-    font-size: 14px;
-    width: 100%;
-  }
-  
-  td, th {
-    width: 25%;
-  }
+div th{
+  color: rgb(255, 255, 255);
+  font-weight:500;
+  font-size: medium;
+  background-color: rgba(0, 0, 0, 0.855);
+}
+
+.mat-form-field {
+  font-size: 14px;
+  width: 100%;
+}
+
+.mat-column-clI_ID{
+ padding-right: 40px;
+}
+.mat-column-clI_COD{
+  width: 7%;
+}
+.mat-column-clI_NOM{
+  width: 23%;
+}
+.mat-column-fecha{
+  width: 8%;
+}
+.mat-column-usuario{
+  padding-right: 30px;
+}

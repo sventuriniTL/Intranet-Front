@@ -1,9 +1,10 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { FlexLayoutModule } from '@angular/flex-layout';
+
 
 import { Dashboard1RoutingModule } from './dashboard1-routing.module';
 import { MaterialModule } from 'src/app/material.module';
-import { AppModule } from 'src/app/app.module';
 import { Dashboard1Component } from './dashboard1.component';
 import { InicioComponent } from './inicio/inicio.component';
 import { SideBarComponent } from './sidebar/sidebar.component';
@@ -31,11 +32,13 @@ import { ClientesConDificultadesComponent } from './clientes-con-dificultades/cl
     
   ],
   imports: [
+    FlexLayoutModule,
     CommonModule,
     Dashboard1RoutingModule,
     MaterialModule,
     NgbCarouselModule,
     NgbModule,
+
   
 
   ]
