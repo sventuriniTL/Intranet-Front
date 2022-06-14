@@ -1,13 +1,17 @@
 .tableDiv{
   width: 100%;
+  margin-bottom: 20px;
 }
 table{
   width: 90%;
   margin: 0 auto;
 }
-
+::ng-deep .mat-primary .mat-option.mat-selected:not(.mat-option-disabled) {
+ background-color: rgba(0, 87, 122, 0.418);
+ color:black
+}
 ::ng-deep .mat-sort-header-arrow {
-  color: rgb(41, 126, 163);
+  color: rgba(0, 88, 126, 0.655);
 }
 
 div th{
