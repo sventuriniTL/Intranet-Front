@@ -32,7 +32,8 @@ export class ClientesConDificultadesComponent implements OnInit {
   displayedColumns: string[] = ['clI_ID', 'clI_COD', 'clI_NOM',
     'fecha',
     'usuario', 
-    'comentarios'
+    'comentarios',
+    'icono1'
   //'fechaBaja',
   //'fechaModi',
   //'userBaja',
