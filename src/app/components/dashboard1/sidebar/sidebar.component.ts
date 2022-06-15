@@ -15,13 +15,6 @@ import {MediaMatcher} from '@angular/cdk/layout';
 })
 export class SideBarComponent {
   mobileQuery: MediaQueryList;
-  @ViewChild('sidenav') sidenav!: MatSidenav;
-  reason = '';
-  close(reason: string) {
-    this.reason = reason;
-    this.sidenav.close();
-  }
-
 
   private _mobileQueryListener: () => void;
 

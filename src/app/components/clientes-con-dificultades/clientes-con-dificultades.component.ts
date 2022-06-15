@@ -1,9 +1,14 @@
-import { Component, OnInit, ViewChild, AfterViewInit } from '@angular/core';
+import { Component, OnInit, ViewChild, AfterViewInit, Input, HostListener, Directive, ChangeDetectorRef } from '@angular/core';
 import {LiveAnnouncer} from '@angular/cdk/a11y';
 import {MatPaginator} from '@angular/material/paginator';
 import {MatSort} from '@angular/material/sort';
 import {MatTableDataSource} from '@angular/material/table';
 import { ClientesConDificultadService } from 'src/app/services/clientes-con-dificultad.service';
+import { MatSidenav } from '@angular/material/sidenav';
+import { BreakpointObserver, Breakpoints, MediaMatcher } from '@angular/cdk/layout';
+import { Observable} from 'rxjs';
+import { map, shareReplay } from 'rxjs/operators';
+
 
 
 
@@ -34,16 +39,21 @@ export class ClientesConDificultadesComponent implements OnInit {
     'usuario', 
     'comentarios',
     'icono1'
-  //'fechaBaja',
-  //'fechaModi',
-  //'userBaja',
-  //'userModi',
 ];
+
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
+  @ViewChild('snav') sidenav!: MatSidenav;
 
-  constructor(private service: ClientesConDificultadService,private _liveAnnouncer: LiveAnnouncer) { }
+
   
+  constructor(private service: ClientesConDificultadService, private breakpointObserver: BreakpointObserver) { 
+  }
+  isHandset$: Observable<boolean> = this.breakpointObserver.observe(Breakpoints.Handset)
+  .pipe(
+    map(result => result.matches),
+    shareReplay()
+  );
 
   ngAfterViewInit() {
     this.dataSource.sort = this.sort;
@@ -68,5 +78,5 @@ export class ClientesConDificultadesComponent implements OnInit {
     let resp = this.service.getClientesCDList();
     resp.subscribe(report => this.dataSource.data = report as clienteData[])
   }
-  
+
 }
