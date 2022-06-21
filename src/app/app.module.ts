@@ -29,10 +29,8 @@ import { ClientesConDificultadService } from './services/clientes-con-dificultad
     LoginComponent,
     MainContentComponent,
     RegisterComponent,
-    AdministracionComponent,
-    
-    
-    
+    AdministracionComponent, 
+ 
   ],
   imports: [
     BrowserModule,
@@ -50,11 +48,6 @@ import { ClientesConDificultadService } from './services/clientes-con-dificultad
     MatMenuModule,
     MatIconModule,
     MatButtonModule,
-   
-
-   
-    
-    
   ],
   providers: [ClientesConDificultadService],
   bootstrap: [AppComponent]

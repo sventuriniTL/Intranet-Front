@@ -20,6 +20,7 @@ import {MatMenuModule} from '@angular/material/menu';
 import {MatTabsModule} from '@angular/material/tabs';
 import {MatPaginatorModule} from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
+import {MatTooltipModule} from '@angular/material/tooltip';
 
 
 
@@ -59,6 +60,7 @@ import { MatSortModule } from '@angular/material/sort';
     MatTabsModule,
     MatPaginatorModule,
     MatSortModule,
+    MatTooltipModule,
     
   ]
   

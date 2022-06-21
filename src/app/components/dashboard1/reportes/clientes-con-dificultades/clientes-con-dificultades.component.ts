@@ -32,6 +32,7 @@ export interface clienteData {
   styleUrls: ['./clientes-con-dificultades.component.css']
 })
 export class ClientesConDificultadesComponent implements OnInit {
+  
   ELEMENT_DATA!: clienteData[];
   dataSource = new MatTableDataSource<clienteData>(this.ELEMENT_DATA)
   displayedColumns: string[] = ['clI_ID', 'clI_COD', 'clI_NOM',
@@ -78,5 +79,6 @@ export class ClientesConDificultadesComponent implements OnInit {
     let resp = this.service.getClientesCDList();
     resp.subscribe(report => this.dataSource.data = report as clienteData[])
   }
+
 
 }

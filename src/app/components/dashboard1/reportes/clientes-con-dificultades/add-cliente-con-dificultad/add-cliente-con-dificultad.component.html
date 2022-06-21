@@ -1,0 +1,45 @@
+<div class="container">
+    <mat-card>
+        <form [formGroup]="form" (ngSubmit)="agregarUsuario()">
+            <mat-grid-list cols="4" rowHeight="70px">
+                <mat-grid-tile [colspan]="2" [rowspan]="1">
+                    <mat-form-field class="ancho" appearance="fill">
+                        <mat-label>CLIENTE</mat-label>
+                        <input matInput autocomplete="off" formControlName="cliente">
+                    </mat-form-field>
+                </mat-grid-tile>
+                <mat-grid-tile [colspan]="2" [rowspan]="1">
+                    <mat-form-field class="ancho" appearance="fill">
+                        <mat-label>RAZON SOCIAL</mat-label>
+                        <input matInput autocomplete="off" formControlName="razonSocial">
+                    </mat-form-field>
+                </mat-grid-tile>
+                <mat-grid-tile [colspan]="2" [rowspan]="1">
+                    <mat-form-field class="ancho" appearance="fill">
+                        <mat-label>FECHA ALTA</mat-label>
+                        <input matInput type="date" autocomplete="off" formControlName="fecha">
+                    </mat-form-field>
+                </mat-grid-tile>
+                <mat-grid-tile [colspan]="2" [rowspan]="1" >
+                    <mat-form-field class="ancho" appearance="fill">
+                        <mat-label>USUARIO</mat-label>
+                        <input matInput autocomplete="off" formControlName="usuario">
+                    </mat-form-field>
+                </mat-grid-tile>
+                <mat-grid-tile [colspan]="4" [rowspan]="3">
+                    <mat-form-field class="ancho" appearance="fill">
+                        <mat-label>COMENTARIOS</mat-label>
+                        <textarea matInput autocomplete="off" class="alto" formControlName="comentarios"></textarea>
+                    </mat-form-field>
+                </mat-grid-tile>
+                <mat-grid-tile class="alto" [colspan]="4" [rowspan]="1" >
+                    <button [disabled]="form.invalid" type="submit" mat-flat-button color="primary">aceptar</button>
+                </mat-grid-tile>
+                <mat-grid-tile [colspan]="4" [rowspan]="1" >
+                    
+                    <img src="./assets/imagenes/tecnolab-logo.gif">
+                </mat-grid-tile>
+            </mat-grid-list>
+        </form>
+    </mat-card>
+</div>

@@ -14,7 +14,9 @@ import { UsuariosComponent } from './usuarios/usuarios.component';
 import { PowerbiComponent } from './powerbi/powerbi.component';
 import { NgbModule, NgbCarouselModule } from '@ng-bootstrap/ng-bootstrap';
 import { Powerbi2Component } from './powerbi2/powerbi2.component';
-import { ClientesConDificultadesComponent } from '../clientes-con-dificultades/clientes-con-dificultades.component';
+import { ClientesConDificultadesComponent } from './reportes/clientes-con-dificultades/clientes-con-dificultades.component';
+import { AddClienteConDificultadComponent } from './reportes/clientes-con-dificultades/add-cliente-con-dificultad/add-cliente-con-dificultad.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 
@@ -30,11 +32,14 @@ import { ClientesConDificultadesComponent } from '../clientes-con-dificultades/c
     PowerbiComponent,
     Powerbi2Component,
     ClientesConDificultadesComponent,
+    AddClienteConDificultadComponent,
+    
     
     
     
   ],
   imports: [
+    ReactiveFormsModule,
     FlexLayoutModule,
     CommonModule,
     Dashboard1RoutingModule,

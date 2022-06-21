@@ -13,8 +13,8 @@ export class ClientesConDificultadService {
     return this.http.get<any>(this.clientesCDApiUrl + '/sp_CLIENTES_CON_DIFICULTADESLoadAllResult');
   }
 
-  addClientesCD(data: any) {
-    return this.http.post(this.clientesCDApiUrl + '/sp_CLIENTES_CON_DIFICULTADESLoadAllResult', data);
+  addClientesCD(data: any):  Observable<any[]> {
+    return this.http.post<any>(this.clientesCDApiUrl + '/sp_CLIENTES_CON_DIFICULTADESLoadAllResult', data);
   }
 
   deleteClientesCD(data: any) {
