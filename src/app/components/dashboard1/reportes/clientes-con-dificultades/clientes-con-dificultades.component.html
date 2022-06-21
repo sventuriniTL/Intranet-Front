@@ -23,7 +23,7 @@
 
   <mat-form-field appearance="standard" style="width:30%; margin-left: 34px;">
     <mat-label>Filter</mat-label>
-    <input matInput (keyup)="applyFilter($event)" placeholder="Ej. razon social" #input>
+    <input autocomplete="off" matInput (keyup)="applyFilter($event)" placeholder="Ej. razon social" #input>
   </mat-form-field>
   <div class="tableDiv">
     <table mat-table [dataSource]="dataSource" matSort class="mat-elevation-z8 table-striped ">

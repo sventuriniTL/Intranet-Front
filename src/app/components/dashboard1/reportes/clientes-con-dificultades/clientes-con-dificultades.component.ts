@@ -1,11 +1,10 @@
 import { Component, OnInit, ViewChild, AfterViewInit, Input, HostListener, Directive, ChangeDetectorRef } from '@angular/core';
-import {LiveAnnouncer} from '@angular/cdk/a11y';
 import {MatPaginator} from '@angular/material/paginator';
 import {MatSort} from '@angular/material/sort';
 import {MatTableDataSource} from '@angular/material/table';
 import { ClientesConDificultadService } from 'src/app/services/clientes-con-dificultad.service';
 import { MatSidenav } from '@angular/material/sidenav';
-import { BreakpointObserver, Breakpoints, MediaMatcher } from '@angular/cdk/layout';
+import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { Observable} from 'rxjs';
 import { map, shareReplay } from 'rxjs/operators';
 
