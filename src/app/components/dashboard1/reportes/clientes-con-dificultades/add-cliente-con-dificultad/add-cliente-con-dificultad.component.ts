@@ -1,6 +1,7 @@
 import { Message } from '@angular/compiler/src/i18n/i18n_ast';
 import { Component, Input, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
 import { ClientesConDificultadService } from 'src/app/services/clientes-con-dificultad.service';
 
@@ -25,40 +26,48 @@ export class AddClienteConDificultadComponent implements OnInit {
   imgUser!: string;
   nameUser!: string;
   emailUser!: string;
-  
+
   form: FormGroup = new FormGroup({
-    cliente: new FormControl (''),
-    razonSocial: new FormControl (''),
-    fecha: new FormControl (''),
-    usuario: new FormControl (''),
-    comentarios: new FormControl (''),
+    cliente: new FormControl(''),
+    razonSocial: new FormControl(''),
+    fecha: new FormControl(''),
+    usuario: new FormControl(''),
+    comentarios: new FormControl(''),
 
   })
 
- 
-  constructor(private fb: FormBuilder, 
+
+  constructor(private _snackBar: MatSnackBar, private fb: FormBuilder,
     private _clienteService: ClientesConDificultadService,
-    private router: Router ) { 
+    private router: Router) {
     this.crearFormulario();
-    
+
   }
 
 
 
-  ngOnInit(): void { 
+ 
+ 
+ 
+ 
+ 
+ 
+  ngOnInit(): void {
     this.userMatch(this.email)
   }
-  
+
   crearFormulario() {
     this.form = this.fb.group({
-      cliente: ['',Validators.required],
-      razonSocial: ['',Validators.required],
-      fecha: ['',[Validators.required , Validators.minLength(10)]],
-      usuario: ['',Validators.required],
+      cliente: ['', Validators.required],
+      razonSocial: ['', Validators.required],
+      fecha: ['', [Validators.required]],
+      usuario: ['', Validators.required],
       comentarios: [''],
     })
   }
-  agregarUsuario(){
+
+
+  agregarUsuario() {
     const user: clienteData = {
       clI_COD: this.form.value.cliente,
       clI_NOM: this.form.value.razonSocial,
@@ -66,31 +75,32 @@ export class AddClienteConDificultadComponent implements OnInit {
       fecha: this.form.value.fecha,
       usuario: this.form.value.usuario,
     }
-    
-    this._clienteService.addClientesCD(user).subscribe()
-    
-    alert('se agregó cliente correctamente');
-    this.form.reset();
+    if (this.form.invalid == false) {
+      this.succes();
+      this._clienteService.addClientesCD(user).subscribe();
+    } else {
+      this.error();
+    }
+  }
+
+  error() {
+    this._snackBar.open('Faltan completar campos!', 'OwO', {
+      duration: 5000,
+      horizontalPosition: 'center',
+      verticalPosition: 'bottom'
+    })
+  }
+  succes() {
+    this._snackBar.open('se agregó correctamente!', ':D', {
+      duration: 5000,
+      horizontalPosition: 'center',
+      verticalPosition: 'bottom'
+    })
+    this.form.reset()
   }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  private userMatch(email:string|null) {
+  userMatch(email: string | null) {
     if (email === 'administracion@tecnolab.com.ar') {
       this.imgUser = '../../../assets/imagenes/Gustavo.png';
       this.nameUser = 'Gustavo Auteri';

@@ -7,6 +7,7 @@ import { MatSidenav } from '@angular/material/sidenav';
 import { BreakpointObserver, Breakpoints, MediaMatcher } from '@angular/cdk/layout';
 import { Observable} from 'rxjs';
 import { map, shareReplay } from 'rxjs/operators';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 
 
@@ -50,7 +51,7 @@ export class ClientesConDificultadesComponent implements OnInit {
 
 
   
-  constructor(private service: ClientesConDificultadService, changeDetectorRef: ChangeDetectorRef, media: MediaMatcher, private breakpointObserver: BreakpointObserver) { 
+  constructor( private service: ClientesConDificultadService, changeDetectorRef: ChangeDetectorRef, media: MediaMatcher, private breakpointObserver: BreakpointObserver) { 
     this.mobileQuery = media.matchMedia('(max-width: 600px)');
     this._mobileQueryListener = () => changeDetectorRef.detectChanges();
     this.mobileQuery.addListener(this._mobileQueryListener);

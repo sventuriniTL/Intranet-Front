@@ -33,7 +33,9 @@
                     </mat-form-field>
                 </mat-grid-tile>
                 <mat-grid-tile class="alto" [colspan]="4" [rowspan]="1" >
-                    <button [disabled]="form.invalid" type="submit" mat-flat-button color="primary">aceptar</button>
+                    <button type="button" (click)="form.reset()">Cancelar </button> 
+
+                    <button  type="submit" mat-flat-button color="primary">aceptar</button>
                 </mat-grid-tile>
                 <mat-grid-tile [colspan]="4" [rowspan]="1" >
                     
