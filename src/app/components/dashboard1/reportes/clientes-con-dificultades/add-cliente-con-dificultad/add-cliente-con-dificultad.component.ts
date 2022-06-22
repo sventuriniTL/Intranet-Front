@@ -84,7 +84,7 @@ export class AddClienteConDificultadComponent implements OnInit {
   }
 
   error() {
-    this._snackBar.open('Faltan completar campos!', 'OwO', {
+    this._snackBar.open('Faltan completar campos!!!', 'ÒwÓ', {
       duration: 5000,
       horizontalPosition: 'center',
       verticalPosition: 'bottom'
