@@ -1,7 +1,7 @@
 <div style="width:100%">
   <div class="example-sidenav-container" [style.marginTop.px]="mobileQuery.matches ? 56 : 0">
     <mat-sidenav #snav [fixedInViewport]="mobileQuery.matches"
-      fixedTopGap="56" opened position="end">
+      fixedTopGap="56" closed position="end">
       <div>
         <mat-grid-list cols="6" rowHeight="50px">
           <mat-grid-tile [colspan]="1" [rowspan]="1">
@@ -88,6 +88,6 @@
     </table>
   </div>
 
-  <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]" aria-label="Select page of users" style="margin-right:30px;">
+  <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]" aria-label="Select page of users" style="margin-right:30px; margin-left: 30px; background-color: transparent;">
   </mat-paginator>
 </div>
