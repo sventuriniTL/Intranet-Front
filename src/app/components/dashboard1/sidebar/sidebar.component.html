@@ -1,6 +1,6 @@
 
 <div class="example-container" [class.example-is-mobile]="mobileQuery.matches">
-    <mat-toolbar style="background-color:rgba(0, 88, 126, 0.793); height: 60px; " class="example-toolbar">
+    <mat-toolbar style="background-color:rgb(5, 115, 158); height: 60px; " class="example-toolbar">
         <button style="color:aliceblue" mat-icon-button (click)="snav.toggle()">
             <mat-icon style="font-size:30px;">menu</mat-icon>
         </button>
@@ -37,7 +37,7 @@
         
     </mat-toolbar>
     <mat-sidenav-container class="example-sidenav-container" [style.marginTop.px]="mobileQuery.matches ? 56 : 0">
-        <mat-sidenav #snav [ngStyle]="{ 'width.em': 16 }" id="sidenav" [fixedInViewport]="mobileQuery.matches"
+        <mat-sidenav #snav [ngStyle]="{ 'width.em': 17 }" id="sidenav" [fixedInViewport]="mobileQuery.matches"
             fixedTopGap="56" closed >
             <div class="usuario">
                 <img src={{imgUser}} alt="" class="imgUser">

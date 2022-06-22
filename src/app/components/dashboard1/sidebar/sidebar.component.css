@@ -1,5 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;600&display=swap');
 
+h1.example-app-name {
+  margin-left: 20px;
+}
+@media screen and (max-width:599px){
+  h1.example-app-name {
+    display: none;
+  }
+
+}
 .example-container {
   display: flex;
   flex-direction: column;
@@ -14,10 +23,6 @@
   position: fixed;
   /* Make sure the toolbar will stay on top of the content as it scrolls past. */
   z-index: 2;
-}
-
-h1.example-app-name {
-  margin-left: 20px;
 }
 
 .example-sidenav-container {
@@ -92,7 +97,7 @@ mat-nav-list a {
   margin-top: 10px;
   margin-left: 5px;
   text-align: center;
-  width: 100%;
+  width: 98%;
   transition: all 0.3s ease;
 }
 

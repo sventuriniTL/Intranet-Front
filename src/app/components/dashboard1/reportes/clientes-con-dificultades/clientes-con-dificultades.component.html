@@ -1,27 +1,30 @@
 <div style="width:100%">
-  <mat-sidenav #snav [ngStyle]="{ 'width.em': 45 }" id="sidenav" fixedTopGap="56" closed position="end" mode='over'>
-    <div>
-      <mat-grid-list cols="6" rowHeight="50px">
-        <mat-grid-tile [colspan]="1" [rowspan]="1">
-        </mat-grid-tile>
-        <mat-grid-tile [colspan]="4" [rowspan]="1">
-          AGREGAR CLIENTE CON DIFICULTADES
-        </mat-grid-tile>
-        <mat-grid-tile [colspan]="1" [rowspan]="1">
-          <button (click)="snav.close()" mat-icon-button
-            aria-label="Example icon button with a plus one icon">
-            <mat-icon>clear</mat-icon>
-          </button>
-        </mat-grid-tile>
-      </mat-grid-list>
-    </div>
-    <app-add-cliente-con-dificultad></app-add-cliente-con-dificultad>
-  </mat-sidenav>
+  <div class="example-sidenav-container" [style.marginTop.px]="mobileQuery.matches ? 56 : 0">
+    <mat-sidenav #snav [fixedInViewport]="mobileQuery.matches"
+      fixedTopGap="56" opened position="end">
+      <div>
+        <mat-grid-list cols="6" rowHeight="50px">
+          <mat-grid-tile [colspan]="1" [rowspan]="1">
+          </mat-grid-tile>
+          <mat-grid-tile [colspan]="4" [rowspan]="1">
+            <a class="titulosidebar">AGREGAR CLIENTE CON DIFICULTADES</a>
+          </mat-grid-tile>
+          <mat-grid-tile [colspan]="1" [rowspan]="1">
+            <button (click)="snav.close()" mat-icon-button aria-label="Example icon button with a plus one icon">
+              <mat-icon>clear</mat-icon>
+            </button>
+          </mat-grid-tile>
+        </mat-grid-list>
+      </div>
+      <app-add-cliente-con-dificultad></app-add-cliente-con-dificultad>
+    </mat-sidenav>
+    <mat-sidenav-content>
+  </mat-sidenav-content>
+  </div>
 
 
 
-
-  <mat-form-field appearance="standard" style="width:30%; margin-left: 34px;">
+  <mat-form-field appearance="standard" style="width:40%; margin-left: 34px;">
     <mat-label>Filter</mat-label>
     <input autocomplete="off" matInput (keyup)="applyFilter($event)" placeholder="Ej. razon social" #input>
   </mat-form-field>
@@ -85,5 +88,6 @@
     </table>
   </div>
 
-  <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]" aria-label="Select page of users"></mat-paginator>
+  <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]" aria-label="Select page of users" style="margin-right:30px;">
+  </mat-paginator>
 </div>
