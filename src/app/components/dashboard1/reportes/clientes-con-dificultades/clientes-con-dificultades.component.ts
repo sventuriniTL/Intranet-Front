@@ -31,6 +31,7 @@ export interface clienteData {
   styleUrls: ['./clientes-con-dificultades.component.css']
 })
 export class ClientesConDificultadesComponent implements OnInit {
+ 
   mobileQuery: MediaQueryList;
   private _mobileQueryListener: () => void;
   showFiller = false;

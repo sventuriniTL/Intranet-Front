@@ -1,7 +1,8 @@
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+
 <div style="width:100%">
   <div class="example-sidenav-container" [style.marginTop.px]="mobileQuery.matches ? 56 : 0">
-    <mat-sidenav #snav [fixedInViewport]="mobileQuery.matches"
-      fixedTopGap="56" closed position="end">
+    <mat-sidenav #snav [fixedInViewport]="mobileQuery.matches" fixedTopGap="56" closed position="end">
       <div>
         <mat-grid-list cols="6" rowHeight="50px">
           <mat-grid-tile [colspan]="1" [rowspan]="1">
@@ -19,24 +20,45 @@
       <app-add-cliente-con-dificultad></app-add-cliente-con-dificultad>
     </mat-sidenav>
     <mat-sidenav-content>
-  </mat-sidenav-content>
+    </mat-sidenav-content>
   </div>
 
-
-
-  <mat-form-field appearance="standard" style="width:40%; margin-left: 34px;">
-    <mat-label>Filter</mat-label>
-    <input autocomplete="off" matInput (keyup)="applyFilter($event)" placeholder="Ej. razon social" #input>
-  </mat-form-field>
+  <div class="actionBar" style="width:90%; margin-left:5%;" fxLayout="row" fxLayoutAlign="space-between center" >
+    <div  style="width: 50%; text-align: left;">
+      <mat-form-field appearance="standard" class="filter">
+        <mat-label>Filter</mat-label>
+        <input  autocomplete="off" matInput (keyup)="applyFilter($event)" placeholder="Ej. razon social" #input>
+      </mat-form-field>
+    </div>
+    <div style="width: 50%; text-align: right;">
+      <button [matMenuTriggerFor]="menu" matTooltip="Descargas" matTooltipPosition="left" mat-icon-button color="accent">
+        <span class="material-symbols-outlined">
+          file_download
+          </span>
+      </button>
+      <mat-menu #menu="matMenu">
+        <button (click)="exporter.exportTable('xlsx', {fileName:'Clientes con dificultades'})"class="buton1Nav" mat-menu-item>
+          <mat-icon>download</mat-icon>
+          <span>Descargar Excel</span>
+        </button>
+        <button (click)="exporter.exportTable('txt', {fileName:'Clientes con dificultades'})" class="buton2Nav"mat-menu-item>
+          <mat-icon>attachment</mat-icon>
+          <span>Descargar TXT</span>
+        </button>
+      </mat-menu>
+    </div>
+  </div>
+  
   <div class="tableDiv">
-    <table mat-table [dataSource]="dataSource" matSort class="mat-elevation-z8 table-striped ">
+    <table mat-table [dataSource]="dataSource" matSort class="mat-elevation-z8 table-striped" matTableExporter
+      #exporter="matTableExporter">
       <!--- Tenga en cuenta que estas columnas se pueden definir en cualquier orden.
           Las columnas representadas reales se establecen como una propiedad en el ts donde displayedColumns" -->
 
       <ng-container matColumnDef="icono1">
         <mat-toolbar>
           <th *matHeaderCellDef>
-            <button (click)="snav.toggle()" style="margin-right: 10px;" mat-icon-button color="accent"
+            <button fxLayoutAlign="center center" (click)="snav.toggle()"  mat-icon-button color="accent"
               aria-label="Example icon button with a plus one icon" matTooltip="agregar cliente">
               <mat-icon style="margin-top: -2px;">add</mat-icon>
             </button>
@@ -88,6 +110,7 @@
     </table>
   </div>
 
-  <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]" aria-label="Select page of users" style="margin-right:30px; margin-left: 30px; background-color: transparent;">
+  <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]" aria-label="Select page of users"
+    style="margin-right:30px; margin-left: 30px; background-color: transparent;">
   </mat-paginator>
 </div>

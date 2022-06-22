@@ -1,6 +1,3 @@
-.example-spacer {
-  flex: 1 1 auto;
-}
 
 .tableDiv {
   width: 100%;
@@ -93,46 +90,86 @@ div th {
   height: 100%;
   flex: 1;
 }
-@media screen and (max-height:601px) {
-  .mat-sidenav {
-    height: 540px ;
-  }
+.material-symbols-outlined{
+  font-size: 35px;
 }
-@media screen and (max-width:599px) {
-  .mat-sidenav {
-    width: 600px;
-  }
+.buton1Nav:hover {
+  transition: all 0.4s ease;
+  color: rgba(255, 255, 255, 0.915);
+  background-color: rgba(0, 88, 126, 0.655);
 }
 
-@media screen and (max-width:542px) {
-  .mat-sidenav {
-    width: 540px;
-  }
+.buton2Nav:hover {
+  transition: all 0.4s ease;
+  color: rgba(255, 255, 255, 0.915);
+  background-color: rgba(0, 88, 126, 0.655);
 }
-
-@media screen and (max-width:415px) {
-  .mat-sidenav {
-    width: 415px;
-  }
+.filter{
+  width: 50%;
 }
-
-@media screen and (max-width:394px) {
-  .mat-sidenav {
-    width: 394px;
+  @media screen and (max-height:601px) {
+    .mat-sidenav {
+      height: 540px ;
+    }
+    .filter{
+      width: 80%;
+    }
   }
-}
+  
+  @media screen and (max-width:599px) {
+    .mat-sidenav {
+      width: 600px;
+    }
+    .filter{
+      width: 80%;
+    }
+  }
+  
+  @media screen and (max-width:542px) {
+    .mat-sidenav {
+      width: 540px;
+    }
+    .filter{
+      width: 80%;
+    }
+  }
+  
+  @media screen and (max-width:415px) {
+    .mat-sidenav {
+      width: 415px;
+    }
+    .filter{
+      width: 80%;
+    }
+  }
+  
+  @media screen and (max-width:394px) {
+    .mat-sidenav {
+      width: 394px;
+    }
+    .filter{
+      width: 80%;
+    }
+  }
 
 @media screen and (max-width:362px) {
   .mat-sidenav {
     width: 360px;
   }
+  .filter{
+    width: 80%;
+  }
+}
 
   @media screen and (max-width:282px) {
     .mat-sidenav {
       width: 282px;
     }
-  }
-}
+    .filter{
+      width: 80%;
+    }
+ }
+
 
 .titulosidebar {
   margin-top: 30px;

@@ -21,6 +21,7 @@ import {MatTabsModule} from '@angular/material/tabs';
 import {MatPaginatorModule} from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
 import {MatTooltipModule} from '@angular/material/tooltip';
+import { MatTableExporterModule } from 'mat-table-exporter';
 
 
 
@@ -61,6 +62,9 @@ import {MatTooltipModule} from '@angular/material/tooltip';
     MatPaginatorModule,
     MatSortModule,
     MatTooltipModule,
+    MatTableModule,
+    MatButtonModule,
+    MatTableExporterModule,
     
   ]
   
