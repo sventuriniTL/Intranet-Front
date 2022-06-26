@@ -66,6 +66,7 @@ export class AddClienteConDificultadComponent implements OnInit {
     })
   }
 
+  
 
   agregarUsuario() {
     const user: clienteData = {
@@ -75,14 +76,14 @@ export class AddClienteConDificultadComponent implements OnInit {
       fecha: this.form.value.fecha,
       usuario: this.form.value.usuario,
     }
-    if (this.form.invalid == false) {
+    if (this.form.invalid == true) {
+      this.error();
+    } else {
       this.succes();
       this._clienteService.addClientesCD(user).subscribe();
-    } else {
-      this.error();
     }
   }
-
+ 
   error() {
     this._snackBar.open('Faltan completar campos!!!', 'ÒwÓ', {
       duration: 5000,

@@ -17,7 +17,7 @@ export class ClientesConDificultadService {
     return this.http.post<any>(this.clientesCDApiUrl + '/sp_CLIENTES_CON_DIFICULTADESLoadAllResult', data);
   }
 
-  deleteClientesCD(data: any) {
-    return this.http.delete(this.clientesCDApiUrl + '/sp_CLIENTES_CON_DIFICULTADESLoadAllResult', data);
+  deleteClientesCD(data: any): Observable<any[]> {
+    return this.http.put<any>(this.clientesCDApiUrl + '/sp_CLIENTES_CON_DIFICULTADESLoadAllResult', data);
   }
 }

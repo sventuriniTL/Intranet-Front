@@ -7,7 +7,8 @@ import { MatSidenav } from '@angular/material/sidenav';
 import { BreakpointObserver, Breakpoints, MediaMatcher } from '@angular/cdk/layout';
 import { Observable} from 'rxjs';
 import { map, shareReplay } from 'rxjs/operators';
-import { MatSnackBar } from '@angular/material/snack-bar';
+import { MatTabBody } from '@angular/material/tabs';
+import { ServiceAccionesClienteService } from 'src/app/services/service-acciones-cliente.service';
 
 
 
@@ -51,15 +52,18 @@ export class ClientesConDificultadesComponent implements OnInit {
 
 
   
-  constructor( private service: ClientesConDificultadService, changeDetectorRef: ChangeDetectorRef, media: MediaMatcher, private breakpointObserver: BreakpointObserver) { 
+  constructor( private service: ClientesConDificultadService,
+              private _accionesClientesService: ServiceAccionesClienteService,
+              public changeDetectorRef: ChangeDetectorRef,
+              public media: MediaMatcher, 
+              private breakpointObserver: BreakpointObserver) { 
+   
     this.mobileQuery = media.matchMedia('(max-width: 600px)');
     this._mobileQueryListener = () => changeDetectorRef.detectChanges();
     this.mobileQuery.addListener(this._mobileQueryListener);
   
-  
-  
   }
-  
+
   isHandset$: Observable<boolean> = this.breakpointObserver.observe(Breakpoints.Handset)
   .pipe(
     map(result => result.matches),
@@ -88,7 +92,12 @@ export class ClientesConDificultadesComponent implements OnInit {
   cargarClientes(){
     let resp = this.service.getClientesCDList();
     resp.subscribe(report => this.dataSource.data = report as clienteData[])
+    
   }
-
-
+  eliminarCliente(element: any){
+    
+    this._accionesClientesService.pasarDato(element) 
+    console.log(this._accionesClientesService.clientesArray)
+ 
+  }
 }

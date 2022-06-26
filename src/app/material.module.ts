@@ -22,13 +22,7 @@ import {MatPaginatorModule} from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
 import {MatTooltipModule} from '@angular/material/tooltip';
 import { MatTableExporterModule } from 'mat-table-exporter';
-
-
-
-
-
-
-
+import { MatDialogModule } from '@angular/material/dialog';
 
 
 
@@ -65,6 +59,7 @@ import { MatTableExporterModule } from 'mat-table-exporter';
     MatTableModule,
     MatButtonModule,
     MatTableExporterModule,
+    MatDialogModule,
     
   ]
   
