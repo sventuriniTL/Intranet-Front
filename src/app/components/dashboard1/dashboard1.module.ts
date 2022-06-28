@@ -35,11 +35,6 @@ import { DeleteClienteConDificultadesComponent } from './reportes/clientes-con-d
     ClientesConDificultadesComponent,
     AddClienteConDificultadComponent,
     DeleteClienteConDificultadesComponent,
-  
-    
-    
-    
-    
   ],
   imports: [
     ReactiveFormsModule,
@@ -50,9 +45,10 @@ import { DeleteClienteConDificultadesComponent } from './reportes/clientes-con-d
     NgbCarouselModule,
     NgbModule,
     FormsModule,
-
-  
-
-  ]
+  ],
+  entryComponents: [DeleteClienteConDificultadesComponent],
+  providers: [
+    ClientesConDificultadesComponent
+  ],
 })
 export class Dashboard1Module { }

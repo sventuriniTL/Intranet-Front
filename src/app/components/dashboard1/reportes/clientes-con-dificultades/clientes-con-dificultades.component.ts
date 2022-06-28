@@ -9,6 +9,9 @@ import { Observable} from 'rxjs';
 import { map, shareReplay } from 'rxjs/operators';
 import { MatTabBody } from '@angular/material/tabs';
 import { ServiceAccionesClienteService } from 'src/app/services/service-acciones-cliente.service';
+import { MatDialog, MatDialogRef } from '@angular/material/dialog';
+import { DeleteClienteConDificultadesComponent } from './delete-cliente-con-dificultades/delete-cliente-con-dificultades.component';
+import { SidenavManagerService, UIState } from 'src/app/services/sidenav-manager.service';
 
 
 
@@ -34,6 +37,7 @@ export interface clienteData {
 })
 export class ClientesConDificultadesComponent implements OnInit {
  
+ 
   mobileQuery: MediaQueryList;
   private _mobileQueryListener: () => void;
   showFiller = false;
@@ -56,14 +60,22 @@ export class ClientesConDificultadesComponent implements OnInit {
               private _accionesClientesService: ServiceAccionesClienteService,
               public changeDetectorRef: ChangeDetectorRef,
               public media: MediaMatcher, 
-              private breakpointObserver: BreakpointObserver) { 
+              private breakpointObserver: BreakpointObserver,
+              public dialog: MatDialog,
+              private ui: SidenavManagerService )
+              { 
    
     this.mobileQuery = media.matchMedia('(max-width: 600px)');
     this._mobileQueryListener = () => changeDetectorRef.detectChanges();
     this.mobileQuery.addListener(this._mobileQueryListener);
   
   }
-
+  sideNavToggle(): void {
+    this.ui.sideNavToggle();
+  }
+  get uiState(): UIState {
+    return this.ui._uiState;
+  }
   isHandset$: Observable<boolean> = this.breakpointObserver.observe(Breakpoints.Handset)
   .pipe(
     map(result => result.matches),
@@ -89,15 +101,20 @@ export class ClientesConDificultadesComponent implements OnInit {
     this.cargarClientes();
   }
 
-  cargarClientes(){
+  public cargarClientes(){
     let resp = this.service.getClientesCDList();
     resp.subscribe(report => this.dataSource.data = report as clienteData[])
     
   }
   eliminarCliente(element: any){
-    
     this._accionesClientesService.pasarDato(element) 
-    console.log(this._accionesClientesService.clientesArray)
+    console.log(this._accionesClientesService.clienteData)
+  }
  
+  openDialog(): void {
+    this.dialog.open(DeleteClienteConDificultadesComponent,{
+      width:'350px',
+      data: 'Está seguro?',
+    });
   }
 }

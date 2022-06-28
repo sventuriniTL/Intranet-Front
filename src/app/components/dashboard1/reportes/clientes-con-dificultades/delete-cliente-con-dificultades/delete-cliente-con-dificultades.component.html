@@ -1,44 +1,8 @@
-<div class="container">
-    <mat-card>
-        <form  [formGroup]="form" (submit)="deleteCliente()">
-            <mat-grid-list cols="4" rowHeight="70px">
-                <mat-grid-tile [colspan]="2" [rowspan]="1">
-                    <mat-form-field class="ancho" appearance="fill">
-                        <mat-label>Nro</mat-label>
-                        <input matInput autocomplete="off" formControlName="clI_ID">
-                       
-                       
-                    </mat-form-field>
-                </mat-grid-tile>
-                <mat-grid-tile [colspan]="2" [rowspan]="1">
-                    <mat-form-field class="ancho" appearance="fill">
-                        <mat-label>Razon Social</mat-label>
-                        <input matInput autocomplete="off" formControlName="clI_NOM" >
-                        
-                    </mat-form-field>
-                </mat-grid-tile>
-                <mat-grid-tile [colspan]="2" [rowspan]="1">
-                    <mat-form-field class="ancho" appearance="fill">
-                        <mat-label>FECHA BAJA</mat-label>
-                        <input matInput type="date" autocomplete="off" formControlName="fechaBaja">
-                    </mat-form-field>
-                </mat-grid-tile>
-                <mat-grid-tile [colspan]="2" [rowspan]="1" >
-                    <mat-form-field class="ancho" appearance="fill">
-                        <mat-label>USER BAJA</mat-label>
-                        <input matInput autocomplete="off" formControlName="userBaja">
-                    </mat-form-field>
-                </mat-grid-tile>
-                <mat-grid-tile class="alto" [colspan]="4" [rowspan]="1" >
-                    <button type="button" >Cancelar </button> 
-
-                    <button  type="submit" mat-flat-button color="primary">aceptar</button>
-                </mat-grid-tile>
-                <mat-grid-tile [colspan]="4" [rowspan]="1" >
-                    
-                    <img src="./assets/imagenes/tecnolab-logo.gif">
-                </mat-grid-tile>
-            </mat-grid-list>
-        </form>
-    </mat-card>
+<h1 mat-dialog-title>Eliminar cliente con dificultad</h1>
+<div mat-dialog-content>
+  {{message}}
+</div>
+<div mat-dialog-actions>
+  <button mat-button mat-dialog-close>Cancelar</button>
+  <button mat-button mat-dialog-close cdkFocusInitial (click)="deleteCliente()">Aceptar</button>
 </div>

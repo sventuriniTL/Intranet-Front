@@ -1,9 +1,23 @@
-<mat-toolbar class="navbar">
-    <span>Intranet</span>
-    <span class="example-spacer"></span>
-    <button mat-button routerLink="/dashboard1">Dashboard</button>
-    <button mat-button routerLink="/dashboard1/usuarios">Usuarios</button>
-    <button mat-button routerLink="/dashboard1/reportes">Reportes</button>
-    <span class="example-spacer"></span>
-    <mat-icon routerLink="/login" class="example-icon" aria-hidden="false" aria-label="Example heart icon">logout</mat-icon>
-</mat-toolbar>
+<div style="width:100%">
+    <div class="example-sidenav-container" [style.marginTop.px]="mobileQuery.matches ? 56 : 0">
+      <mat-sidenav #snav [fixedInViewport]="mobileQuery.matches" fixedTopGap="56" [opened]="this.uiState.sideNavOpen" position="end">
+        <div>
+          <mat-grid-list cols="6" rowHeight="50px">
+            <mat-grid-tile [colspan]="1" [rowspan]="1">
+            </mat-grid-tile>
+            <mat-grid-tile [colspan]="4" [rowspan]="1">
+              <a class="titulosidebar">AGREGAR CLIENTE CON DIFICULTADES</a>
+            </mat-grid-tile>
+            <mat-grid-tile [colspan]="1" [rowspan]="1">
+              <button (click)="sideNavToggle()" mat-icon-button aria-label="Example icon button with a plus one icon">
+                <mat-icon>clear</mat-icon>
+              </button>
+            </mat-grid-tile>
+          </mat-grid-list>
+        </div>
+        <app-add-cliente-con-dificultad></app-add-cliente-con-dificultad>
+      </mat-sidenav>
+      <mat-sidenav-content>
+        <router-outlet></router-outlet>
+      </mat-sidenav-content>
+    </div>

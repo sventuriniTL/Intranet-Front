@@ -1,6 +1,7 @@
 <div class="container">
     <mat-card>
-        <form [formGroup]="form" (ngSubmit)="agregarUsuario()">
+        <mat-spinner *ngIf="loading" diameter="50"></mat-spinner>
+        <form *ngIf="!loading" [formGroup]="form" (ngSubmit)="agregarUsuario()">
             <mat-grid-list cols="4" rowHeight="70px">
                 <mat-grid-tile [colspan]="2" [rowspan]="1">
                     <mat-form-field class="ancho" appearance="fill">
@@ -33,7 +34,7 @@
                     </mat-form-field>
                 </mat-grid-tile>
                 <mat-grid-tile class="alto" [colspan]="4" [rowspan]="1" >
-                    <button type="button" (click)="form.reset()">Cancelar </button> 
+                    <button type="button" mat-flat-button style="text-align: center; margin-right: 10px;color:aliceblue; background-color: #d0342c;" (click)="cerrar()">Cancelar </button> 
 
                     <button  type="submit" mat-flat-button color="primary">aceptar</button>
                 </mat-grid-tile>

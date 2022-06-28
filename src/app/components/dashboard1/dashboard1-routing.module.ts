@@ -4,6 +4,7 @@ import { Dashboard1Component } from './dashboard1.component';
 import { InicioComponent } from './inicio/inicio.component';
 import { PowerbiComponent } from './powerbi/powerbi.component';
 import { Powerbi2Component } from './powerbi2/powerbi2.component';
+import { AddClienteConDificultadComponent } from './reportes/clientes-con-dificultades/add-cliente-con-dificultad/add-cliente-con-dificultad.component';
 import { ClientesConDificultadesComponent } from './reportes/clientes-con-dificultades/clientes-con-dificultades.component';
 import { ReportesComponent } from './reportes/reportes.component';
 import { UsuariosComponent } from './usuarios/usuarios.component';
@@ -13,9 +14,12 @@ const routes: Routes = [
     path: '', component: Dashboard1Component, children: [
       { path: '', component: InicioComponent },
       { path: 'usuarios', component: UsuariosComponent },
-      {
-        path: 'reportes', component: ReportesComponent, children: [
-          { path: 'clientesConDificultades', component: ClientesConDificultadesComponent }
+      { path: 'reportes', component: ReportesComponent, children: [
+          {
+            path: 'clientesConDificultades', component: ClientesConDificultadesComponent, children: [
+              { path: 'addClientes', component: AddClienteConDificultadComponent }
+            ]
+          }
         ]
       },
       { path: 'powerBi', component: PowerbiComponent },

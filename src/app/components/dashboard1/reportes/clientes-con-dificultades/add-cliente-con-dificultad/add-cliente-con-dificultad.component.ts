@@ -4,6 +4,7 @@ import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms'
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
 import { ClientesConDificultadService } from 'src/app/services/clientes-con-dificultad.service';
+import { SidenavManagerService } from 'src/app/services/sidenav-manager.service';
 
 
 export interface clienteData {
@@ -26,7 +27,7 @@ export class AddClienteConDificultadComponent implements OnInit {
   imgUser!: string;
   nameUser!: string;
   emailUser!: string;
-
+  loading = false;
   form: FormGroup = new FormGroup({
     cliente: new FormControl(''),
     razonSocial: new FormControl(''),
@@ -39,7 +40,8 @@ export class AddClienteConDificultadComponent implements OnInit {
 
   constructor(private _snackBar: MatSnackBar, private fb: FormBuilder,
     private _clienteService: ClientesConDificultadService,
-    private router: Router) {
+    private router: Router,
+    private ui: SidenavManagerService) {
     this.crearFormulario();
 
   }
@@ -56,6 +58,13 @@ export class AddClienteConDificultadComponent implements OnInit {
     this.userMatch(this.email)
   }
 
+  reloadCurrentRoute() {
+    let currentUrl = this.router.url;
+    this.router.navigateByUrl('/', { skipLocationChange: true }).then(() => {
+      this.router.navigate([currentUrl]);
+    });
+  }
+
   crearFormulario() {
     this.form = this.fb.group({
       cliente: ['', Validators.required],
@@ -66,8 +75,15 @@ export class AddClienteConDificultadComponent implements OnInit {
     })
   }
 
-  
-
+  cerrar(){ 
+    this.loading = true;
+    setTimeout(() => {
+      this.loading = false
+      this.ui.sideNavToggle()
+      this.reloadCurrentRoute() 
+    }, 1000)
+    
+  }
   agregarUsuario() {
     const user: clienteData = {
       clI_COD: this.form.value.cliente,
@@ -81,21 +97,22 @@ export class AddClienteConDificultadComponent implements OnInit {
     } else {
       this.succes();
       this._clienteService.addClientesCD(user).subscribe();
+      this.cerrar()
     }
   }
  
   error() {
-    this._snackBar.open('Faltan completar campos!!!', 'ÒwÓ', {
+    this._snackBar.open('Faltan completar campos!!!', 'ÒwÓ🤚', {
       duration: 5000,
       horizontalPosition: 'center',
-      verticalPosition: 'bottom'
+      verticalPosition: 'top'
     })
   }
   succes() {
-    this._snackBar.open('se agregó correctamente!', ':D', {
+    this._snackBar.open('se agregó correctamente!', '😄👍', {
       duration: 5000,
       horizontalPosition: 'center',
-      verticalPosition: 'bottom'
+      verticalPosition: 'top'
     })
     this.form.reset()
   }
