@@ -33,24 +33,24 @@
    
     <div class="tableDiv">
       <table mat-table [dataSource]="dataSource" matSort class="mat-elevation-z8 table-striped" matTableExporter
-        #exporter="matTableExporter">
+        #exporter="matTableExporter" [hiddenColumns]="[6]">
         <!--- Tenga en cuenta que estas columnas se pueden definir en cualquier orden.
           Las columnas representadas reales se establecen como una propiedad en el ts donde displayedColumns" -->
 
         <ng-container matColumnDef="icono1">
           <mat-toolbar>
             <th *matHeaderCellDef>
-              <button (click)="sideNavToggle()" mat-icon-button color="accent"
+              <button (click)="sidebarDerechoService.open('sidebar-1')" mat-icon-button color="accent"
                 aria-label="Example icon button with a plus one icon" matTooltip="agregar cliente">
                 <mat-icon style="margin-top: -2px;">add</mat-icon>
               </button>
             </th>
             <td mat-cell *matCellDef="let element" style="text-align: right;">
               <a>
-                <mat-icon class="pointer" style="color:#1f516f">edit</mat-icon>
+                <mat-icon (click)="clienteDataRow(element.comentarios)" (click)="editar()" class="pointer" style="color:#1f516f">edit</mat-icon>
               </a>
               <a>
-                <mat-icon (click)="openDialog()" (click)="eliminarCliente(element)" class="pointer"
+                <mat-icon (click)="openDialog()" (click)="clienteDataRow(element)" class="pointer"
                   style="margin-left:5px" color="accent">delete</mat-icon>
               </a>
           </mat-toolbar>
@@ -62,9 +62,9 @@
         </ng-container>
 
 
-        <ng-container matColumnDef="clI_COD">
+        <ng-container matColumnDef="clI_COD" >
           <th mat-header-cell *matHeaderCellDef mat-sort-header>Cliente</th>
-          <td mat-cell *matCellDef="let element">{{element.clI_COD}}</td>
+          <td mat-cell *matCellDef="let element" id="colCOD">{{element.clI_COD}}</td>
         </ng-container>
 
 

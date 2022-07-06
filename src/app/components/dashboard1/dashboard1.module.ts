@@ -18,6 +18,8 @@ import { ClientesConDificultadesComponent } from './reportes/clientes-con-dificu
 import { AddClienteConDificultadComponent } from './reportes/clientes-con-dificultades/add-cliente-con-dificultad/add-cliente-con-dificultad.component';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { DeleteClienteConDificultadesComponent } from './reportes/clientes-con-dificultades/delete-cliente-con-dificultades/delete-cliente-con-dificultades.component';
+import { EditClientesConDificultadesComponent } from './reportes/clientes-con-dificultades/edit-clientes-con-dificultades/edit-clientes-con-dificultades.component';
+import { SidebarDerechoComponent } from './sidebar-derecho/sidebar-derecho.component';
 
 
 
@@ -27,7 +29,6 @@ import { DeleteClienteConDificultadesComponent } from './reportes/clientes-con-d
     Dashboard1Component,
     InicioComponent,
     ReportesComponent,
-    NavbarComponent,
     UsuariosComponent,
     SideBarComponent,
     PowerbiComponent,
@@ -35,6 +36,9 @@ import { DeleteClienteConDificultadesComponent } from './reportes/clientes-con-d
     ClientesConDificultadesComponent,
     AddClienteConDificultadComponent,
     DeleteClienteConDificultadesComponent,
+    EditClientesConDificultadesComponent,
+    NavbarComponent,
+    SidebarDerechoComponent,
   ],
   imports: [
     ReactiveFormsModule,
@@ -48,7 +52,8 @@ import { DeleteClienteConDificultadesComponent } from './reportes/clientes-con-d
   ],
   entryComponents: [DeleteClienteConDificultadesComponent],
   providers: [
-    ClientesConDificultadesComponent
+    ClientesConDificultadesComponent,
+    EditClientesConDificultadesComponent
   ],
 })
 export class Dashboard1Module { }

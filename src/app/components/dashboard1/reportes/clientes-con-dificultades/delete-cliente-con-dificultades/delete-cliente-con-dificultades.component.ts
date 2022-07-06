@@ -61,7 +61,7 @@ export class DeleteClienteConDificultadesComponent implements OnInit {
       fechaBaja: [this.dateNowISO, [Validators.required]],
       userBaja: ['test', Validators.required],
     })
-    console.log(this.dateNowISO)
+  
   }
 
   deleteCliente() {
@@ -77,8 +77,9 @@ export class DeleteClienteConDificultadesComponent implements OnInit {
     if (this.form.invalid == true) {
       alert('Error en el formulario')
     } else {
+      console.log(user)
+      this._deleteService.deleteClientesCD(user).subscribe();
       this.succes();
-      //this._deleteService.deleteClientesCD(user).subscribe();
       this.reloadCurrentRoute()
 
     }

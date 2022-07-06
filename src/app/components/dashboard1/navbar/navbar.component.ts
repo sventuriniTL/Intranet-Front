@@ -35,6 +35,7 @@ export class NavbarComponent implements OnInit {
     this.ui.sideNavToggle();
   }
 
+
   isHandset$: Observable<boolean> = this.breakpointObserver.observe(Breakpoints.Handset)
     .pipe(
       map(result => result.matches),

@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
@@ -6,25 +6,18 @@ import { ClientesConDificultadService } from 'src/app/services/clientes-con-difi
 import { ServiceAccionesClienteService } from 'src/app/services/service-acciones-cliente.service';
 import { SidebarService } from 'src/app/services/sidebar.service';
 import { SidenavManagerService } from 'src/app/services/sidenav-manager.service';
+import { AddClienteConDificultadComponent } from '../add-cliente-con-dificultad/add-cliente-con-dificultad.component';
 import { ClientesConDificultadesComponent } from '../clientes-con-dificultades.component';
 
-
 export interface clienteData {
-  clI_COD: string;
-  clI_NOM: string;
   comentarios: string;
-  fecha: string;
-  usuario: string;
 }
-
 @Component({
-  selector: 'app-add-cliente-con-dificultad',
-  templateUrl: './add-cliente-con-dificultad.component.html',
-  styleUrls: ['./add-cliente-con-dificultad.component.css']
+  selector: 'app-edit-clientes-con-dificultades',
+  templateUrl: './edit-clientes-con-dificultades.component.html',
+  styleUrls: ['./edit-clientes-con-dificultades.component.css']
 })
-
-
-export class AddClienteConDificultadComponent implements OnInit {
+export class EditClientesConDificultadesComponent implements OnInit {
   email = localStorage.getItem("email");
   imgUser!: string;
   nameUser!: string;
@@ -32,79 +25,57 @@ export class AddClienteConDificultadComponent implements OnInit {
   loading = false;
 
   form: FormGroup = new FormGroup({
-    cliente: new FormControl(''),
-    razonSocial: new FormControl(''),
-    fecha: new FormControl(''),
-    usuario: new FormControl(''),
-    comentarios: new FormControl(''),
-
+    comentarios: new FormControl('')
   })
 
 
   constructor(private _snackBar: MatSnackBar, private fb: FormBuilder,
     private _clienteService: ClientesConDificultadService,
     private _accionesCliente: ServiceAccionesClienteService,
-    private clienteComponent: ClientesConDificultadesComponent,
     private router: Router,
     private ui: SidebarService) {
-    this.crearFormulario();
-
+    this.crearFormulario()
   }
-
-
-
-
-
-
 
 
   ngOnInit(): void {
-    this.userMatch(this.email)
+  this.userMatch(this.email)
   }
 
-  reloadCurrentRoute() {
+  public reloadCurrentRoute() {
     let currentUrl = this.router.url;
     this.router.navigateByUrl('/', { skipLocationChange: true }).then(() => {
       this.router.navigate([currentUrl]);
     });
-  }
+  } 
 
-  crearFormulario() {
-    this.form = this.fb.group({
-      cliente: ['', Validators.required],
-      razonSocial: ['', Validators.required],
-      fecha: ['', [Validators.required]],
-      usuario: ['', Validators.required],
-      comentarios: [''],
+  public dato:any = {
+    comentario: this._accionesCliente.clienteData
+  }
+    public crearFormulario() {
+    this.form =  this.fb.group({
+      comentarios: [ this.dato , Validators.required],
     })
+    console.log('HOLA DESDE ACA '  + this.dato.comentario)
+  }
+ 
+  editarUsuario() {
+    this.ui.open('sidebar-2')
+    const user: clienteData = {
+    comentarios: this.form.value.comentarios,
+    }
   }
 
-  public cerrar() {
+  
+  cerrar() {
     this.loading = true;
     setTimeout(() => {
       this.loading = false
-      this.ui.close('sidebar-1')
+      this.ui.close('sidebar-2')
       this.reloadCurrentRoute()
     }, 1000)
   }
-  public dato: any
-  public valor = 0
-  agregarUsuario() {
 
-    const user: clienteData = {
-      clI_COD: this.form.value.cliente,
-      clI_NOM: this.form.value.razonSocial,
-      comentarios: this.form.value.comentarios,
-      fecha: this.form.value.fecha,
-      usuario: this.form.value.usuario,
-    }
-    if (this.form.invalid == true) {
-      this.error()
-    } else {
-      this.succes()
-      this._clienteService.addClientesCD(user).subscribe()
-    }
-  }
 
   mostrarMensaje(mensaje: string, duracion: number) {
     this._snackBar.open(mensaje, '!', {
@@ -143,3 +114,4 @@ export class AddClienteConDificultadComponent implements OnInit {
     }
   }
 }
+

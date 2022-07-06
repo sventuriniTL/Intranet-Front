@@ -1,40 +1,51 @@
 /* You can add global styles to this file, and also import other style files */
 
-html, body { 
-    height: 100%;
-    width: 100%;
-    background-color: rgb(255, 255, 255);
- }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+html,
+body {
+  height: 100%;
+  width: 100%;
+  background-color: rgb(255, 255, 255);
+}
+
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
 
 *::-webkit-scrollbar {
-    -webkit-appearance: none;
-    width:8px;
+  -webkit-appearance: none;
+  width: 8px;
 }
 
 
 *::-webkit-scrollbar:vertical {
-    width:8px;
-    padding: auto;
+  width: 8px;
+  padding: auto;
 }
 
 
 *::-webkit-scrollbar:horizontal {
-    height: 9.9px;
+  height: 9.9px;
 }
 
 *::-webkit-scrollbar-thumb {
-    background-color: rgb(255 255 255);
-    border-radius: 5px;
-    border: 1rem solid rgba(0, 58, 81, 0.386);
+  background-color: rgb(255 255 255);
+  border-radius: 5px;
+  border: 1rem solid rgba(0, 58, 81, 0.386);
 }
 
 *::-webkit-scrollbar-track {
-    border-radius: 3px;  
+  border-radius: 3px;
 }
 
 .example-spacer {
-    flex: 1 1 auto;
-  }
+  flex: 1 1 auto;
+}
 
 
+.sidebar__open .sidebar {
+  right: 0 !important;
+}
+.sidebar__open .sidebar__overlay {
+  display: block !important;
+}

@@ -1,12 +1,12 @@
-<div class="container">
+<mat-spinner *ngIf="loading" diameter="50"></mat-spinner>
+<div *ngIf="!loading" class="container">
     <mat-card>
-        <mat-spinner *ngIf="loading" diameter="50"></mat-spinner>
-        <form *ngIf="!loading" [formGroup]="form" (ngSubmit)="agregarUsuario()">
+        <form [formGroup]="form" (ngSubmit)="agregarUsuario()">
             <mat-grid-list cols="4" rowHeight="70px">
                 <mat-grid-tile [colspan]="2" [rowspan]="1">
                     <mat-form-field class="ancho" appearance="fill">
                         <mat-label>CLIENTE</mat-label>
-                        <input matInput autocomplete="off" formControlName="cliente">
+                        <input matInput autocomplete="off" formControlName="cliente" >
                     </mat-form-field>
                 </mat-grid-tile>
                 <mat-grid-tile [colspan]="2" [rowspan]="1">
@@ -43,6 +43,6 @@
                     <img src="./assets/imagenes/tecnolab-logo.gif">
                 </mat-grid-tile>
             </mat-grid-list>
-        </form>
+       </form>
     </mat-card>
 </div>

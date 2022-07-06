@@ -1,17 +1,21 @@
 import { Component, OnInit, ViewChild, AfterViewInit, Input, HostListener, Directive, ChangeDetectorRef } from '@angular/core';
-import {MatPaginator} from '@angular/material/paginator';
-import {MatSort} from '@angular/material/sort';
-import {MatTableDataSource} from '@angular/material/table';
+import { MatPaginator } from '@angular/material/paginator';
+import { MatSort } from '@angular/material/sort';
+import { MatTableDataSource } from '@angular/material/table';
 import { ClientesConDificultadService } from 'src/app/services/clientes-con-dificultad.service';
 import { MatSidenav } from '@angular/material/sidenav';
 import { BreakpointObserver, Breakpoints, MediaMatcher } from '@angular/cdk/layout';
-import { Observable} from 'rxjs';
+import { Observable } from 'rxjs';
 import { map, shareReplay } from 'rxjs/operators';
 import { MatTabBody } from '@angular/material/tabs';
 import { ServiceAccionesClienteService } from 'src/app/services/service-acciones-cliente.service';
 import { MatDialog, MatDialogRef } from '@angular/material/dialog';
 import { DeleteClienteConDificultadesComponent } from './delete-cliente-con-dificultades/delete-cliente-con-dificultades.component';
 import { SidenavManagerService, UIState } from 'src/app/services/sidenav-manager.service';
+import { MatTableExporterDirective } from 'mat-table-exporter';
+import { __values } from 'tslib';
+import { SidebarService } from 'src/app/services/sidebar.service';
+import { EditClientesConDificultadesComponent } from './edit-clientes-con-dificultades/edit-clientes-con-dificultades.component';
 
 
 
@@ -36,56 +40,55 @@ export interface clienteData {
   styleUrls: ['./clientes-con-dificultades.component.css']
 })
 export class ClientesConDificultadesComponent implements OnInit {
- 
- 
+
+
   mobileQuery: MediaQueryList;
   private _mobileQueryListener: () => void;
   showFiller = false;
   ELEMENT_DATA!: clienteData[];
-  dataSource = new MatTableDataSource<clienteData>(this.ELEMENT_DATA)
+  public dataSource = new MatTableDataSource<clienteData>(this.ELEMENT_DATA)
   displayedColumns: string[] = ['clI_ID', 'clI_COD', 'clI_NOM',
     'fecha',
-    'usuario', 
+    'usuario',
     'comentarios',
     'icono1'
-];
+  ];
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
   @ViewChild('snav') sidenav!: MatSidenav;
 
 
-  
-  constructor( private service: ClientesConDificultadService,
-              private _accionesClientesService: ServiceAccionesClienteService,
-              public changeDetectorRef: ChangeDetectorRef,
-              public media: MediaMatcher, 
-              private breakpointObserver: BreakpointObserver,
-              public dialog: MatDialog,
-              private ui: SidenavManagerService )
-              { 
-   
+
+  constructor(private service: ClientesConDificultadService,
+    private _accionesClientesService: ServiceAccionesClienteService,
+    public changeDetectorRef: ChangeDetectorRef,
+    public media: MediaMatcher,
+    private breakpointObserver: BreakpointObserver,
+    public dialog: MatDialog,
+    private ui: SidenavManagerService,
+    public sidebarDerechoService: SidebarService,
+    private editComponent: EditClientesConDificultadesComponent) {
+
     this.mobileQuery = media.matchMedia('(max-width: 600px)');
     this._mobileQueryListener = () => changeDetectorRef.detectChanges();
     this.mobileQuery.addListener(this._mobileQueryListener);
-  
-  }
-  sideNavToggle(): void {
-    this.ui.sideNavToggle();
-  }
+    }
+
   get uiState(): UIState {
     return this.ui._uiState;
   }
+
+
   isHandset$: Observable<boolean> = this.breakpointObserver.observe(Breakpoints.Handset)
-  .pipe(
-    map(result => result.matches),
-    shareReplay()
-  );
+    .pipe(
+      map(result => result.matches),
+      shareReplay()
+    );
 
   ngAfterViewInit() {
     this.dataSource.sort = this.sort;
     this.dataSource.paginator = this.paginator;
-    
   }
 
   applyFilter(event: Event) {
@@ -97,24 +100,29 @@ export class ClientesConDificultadesComponent implements OnInit {
     }
   }
 
-  ngOnInit(): void {
+   ngOnInit(): void {
     this.cargarClientes();
   }
 
-  public cargarClientes(){
+  public cargarClientes() {
     let resp = this.service.getClientesCDList();
     resp.subscribe(report => this.dataSource.data = report as clienteData[])
-    
   }
-  eliminarCliente(element: any){
-    this._accionesClientesService.pasarDato(element) 
-    console.log(this._accionesClientesService.clienteData)
+  clienteDataRow(element: any) {
+    this._accionesClientesService.pasarDato(element)
   }
- 
+
+  editar(){
+    this.editComponent.editarUsuario()
+    this.editComponent.crearFormulario()
+  }
+
   openDialog(): void {
-    this.dialog.open(DeleteClienteConDificultadesComponent,{
-      width:'350px',
+    this.dialog.open(DeleteClienteConDificultadesComponent, {
+      width: '350px',
       data: 'Está seguro?',
     });
   }
+
+
 }

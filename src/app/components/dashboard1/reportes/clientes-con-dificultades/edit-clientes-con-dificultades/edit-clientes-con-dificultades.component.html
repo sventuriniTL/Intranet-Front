@@ -1,0 +1,26 @@
+<mat-spinner *ngIf="loading" diameter="50"></mat-spinner>
+<div *ngIf="!loading" class="container">
+    <mat-card>
+        <form [formGroup]="form">
+            <mat-grid-list cols="4" rowHeight="70px">
+                <mat-grid-tile [colspan]="4" [rowspan]="3">
+                    <mat-form-field mat-cell class="ancho" appearance="fill">
+                        <mat-label>COMENTARIOS</mat-label>
+                        <textarea matInput autocomplete="off" class="alto" formControlName="comentarios"></textarea>
+                    </mat-form-field>
+                </mat-grid-tile>
+                <mat-grid-tile class="alto" [colspan]="4" [rowspan]="1">
+                    <button type="button" mat-flat-button
+                        style="text-align: center; margin-right: 10px;color:aliceblue; background-color: #d0342c;"
+                        (click)="cerrar()">Cancelar </button>
+
+                    <button type="submit" mat-flat-button color="primary">aceptar</button>
+                </mat-grid-tile>
+                <mat-grid-tile [colspan]="4" [rowspan]="1">
+
+                    <img src="./assets/imagenes/tecnolab-logo.gif">
+                </mat-grid-tile>
+            </mat-grid-list>
+        </form>
+    </mat-card>
+</div>
