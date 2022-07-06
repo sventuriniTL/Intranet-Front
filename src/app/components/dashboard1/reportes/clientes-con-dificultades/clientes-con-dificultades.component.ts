@@ -1,7 +1,7 @@
 import { Component, OnInit, ViewChild, AfterViewInit, Input, HostListener, Directive, ChangeDetectorRef } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
-import { MatTableDataSource } from '@angular/material/table';
+import { MatTable, MatTableDataSource } from '@angular/material/table';
 import { ClientesConDificultadService } from 'src/app/services/clientes-con-dificultad.service';
 import { MatSidenav } from '@angular/material/sidenav';
 import { BreakpointObserver, Breakpoints, MediaMatcher } from '@angular/cdk/layout';
@@ -57,7 +57,7 @@ export class ClientesConDificultadesComponent implements OnInit {
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
   @ViewChild('snav') sidenav!: MatSidenav;
-
+  @ViewChild(MatTable, { static: true }) table!: MatTable<any>;
 
 
   constructor(private service: ClientesConDificultadService,
@@ -73,12 +73,22 @@ export class ClientesConDificultadesComponent implements OnInit {
     this.mobileQuery = media.matchMedia('(max-width: 600px)');
     this._mobileQueryListener = () => changeDetectorRef.detectChanges();
     this.mobileQuery.addListener(this._mobileQueryListener);
-    }
+  }
 
   get uiState(): UIState {
     return this.ui._uiState;
   }
 
+
+  
+  updateRowData(row_obj) {
+    this.dataSource.filterPredicate = (value, key) => {
+      if (value.clI_ID == row_obj.id) {
+        value.comentarios = row_obj.name;
+      }
+      return true;
+    };
+  }
 
   isHandset$: Observable<boolean> = this.breakpointObserver.observe(Breakpoints.Handset)
     .pipe(
@@ -100,7 +110,7 @@ export class ClientesConDificultadesComponent implements OnInit {
     }
   }
 
-   ngOnInit(): void {
+  ngOnInit(): void {
     this.cargarClientes();
   }
 
@@ -108,13 +118,14 @@ export class ClientesConDificultadesComponent implements OnInit {
     let resp = this.service.getClientesCDList();
     resp.subscribe(report => this.dataSource.data = report as clienteData[])
   }
+
   clienteDataRow(element: any) {
     this._accionesClientesService.pasarDato(element)
+    this._accionesClientesService.handlerData(element)
   }
-
-  editar(){
-    this.editComponent.editarUsuario()
-    this.editComponent.crearFormulario()
+  editar(data) {
+    this.clienteDataRow(data)
+    this.sidebarDerechoService.open('sidebar-2')
   }
 
   openDialog(): void {
@@ -123,6 +134,12 @@ export class ClientesConDificultadesComponent implements OnInit {
       data: 'Está seguro?',
     });
   }
-
+  openDialog2(action, obj) {
+    obj.action = action;
+    const dialogRef = this.dialog.open(EditClientesConDificultadesComponent, {
+      width: '650px',
+      data: obj
+    });
+  }
 
 }

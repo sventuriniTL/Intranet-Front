@@ -53,7 +53,8 @@ import { SidebarDerechoComponent } from './sidebar-derecho/sidebar-derecho.compo
   entryComponents: [DeleteClienteConDificultadesComponent],
   providers: [
     ClientesConDificultadesComponent,
-    EditClientesConDificultadesComponent
+    EditClientesConDificultadesComponent,
+    
   ],
 })
 export class Dashboard1Module { }

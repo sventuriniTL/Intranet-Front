@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Inject, OnInit, Optional } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
 import { ClientesConDificultadService } from 'src/app/services/clientes-con-dificultad.service';
@@ -24,22 +25,21 @@ export class EditClientesConDificultadesComponent implements OnInit {
   emailUser!: string;
   loading = false;
 
-  form: FormGroup = new FormGroup({
-    comentarios: new FormControl('')
-  })
 
 
-  constructor(private _snackBar: MatSnackBar, private fb: FormBuilder,
+  constructor(private _snackBar: MatSnackBar,
+    private fb: FormBuilder,
     private _clienteService: ClientesConDificultadService,
-    private _accionesCliente: ServiceAccionesClienteService,
+    public _accionesCliente: ServiceAccionesClienteService,
     private router: Router,
-    private ui: SidebarService) {
-    this.crearFormulario()
-  }
+    private ui: SidebarService,
+  ) {
 
+  }
+  
 
   ngOnInit(): void {
-  this.userMatch(this.email)
+    this.userMatch(this.email)
   }
 
   public reloadCurrentRoute() {
@@ -47,26 +47,12 @@ export class EditClientesConDificultadesComponent implements OnInit {
     this.router.navigateByUrl('/', { skipLocationChange: true }).then(() => {
       this.router.navigate([currentUrl]);
     });
-  } 
-
-  public dato:any = {
-    comentario: this._accionesCliente.clienteData
-  }
-    public crearFormulario() {
-    this.form =  this.fb.group({
-      comentarios: [ this.dato , Validators.required],
-    })
-    console.log('HOLA DESDE ACA '  + this.dato.comentario)
-  }
- 
-  editarUsuario() {
-    this.ui.open('sidebar-2')
-    const user: clienteData = {
-    comentarios: this.form.value.comentarios,
-    }
   }
 
-  
+
+
+
+
   cerrar() {
     this.loading = true;
     setTimeout(() => {
@@ -91,14 +77,7 @@ export class EditClientesConDificultadesComponent implements OnInit {
       verticalPosition: 'top'
     })
   }
-  succes() {
-    this._snackBar.open('se agregó correctamente!', '😄👍', {
-      duration: 5000,
-      horizontalPosition: 'center',
-      verticalPosition: 'top'
-    })
-    this.form.reset()
-  }
+
 
 
   userMatch(email: string | null) {

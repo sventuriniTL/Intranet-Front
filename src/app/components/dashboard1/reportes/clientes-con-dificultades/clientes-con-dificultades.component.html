@@ -47,7 +47,7 @@
             </th>
             <td mat-cell *matCellDef="let element" style="text-align: right;">
               <a>
-                <mat-icon (click)="clienteDataRow(element.comentarios)" (click)="editar()" class="pointer" style="color:#1f516f">edit</mat-icon>
+                <mat-icon (click)="editar(element)" class="pointer" style="color:#1f516f">edit</mat-icon>
               </a>
               <a>
                 <mat-icon (click)="openDialog()" (click)="clienteDataRow(element)" class="pointer"
