@@ -13,11 +13,13 @@ import { ClientesConDificultadesComponent } from '../clientes-con-dificultades.c
 export interface clienteData {
   comentarios: string;
 }
+
 @Component({
   selector: 'app-edit-clientes-con-dificultades',
   templateUrl: './edit-clientes-con-dificultades.component.html',
   styleUrls: ['./edit-clientes-con-dificultades.component.css']
 })
+
 export class EditClientesConDificultadesComponent implements OnInit {
   email = localStorage.getItem("email");
   imgUser!: string;
@@ -25,6 +27,9 @@ export class EditClientesConDificultadesComponent implements OnInit {
   emailUser!: string;
   loading = false;
 
+  form: FormGroup = new FormGroup({
+    comentarios: new FormControl(''),
+  })
 
 
   constructor(private _snackBar: MatSnackBar,
@@ -34,9 +39,14 @@ export class EditClientesConDificultadesComponent implements OnInit {
     private router: Router,
     private ui: SidebarService,
   ) {
-
+    this.crearFormulario();
   }
   
+  crearFormulario() {
+    this.form = this.fb.group({
+      comentarios: ['', Validators.required],
+    })
+  }
 
   ngOnInit(): void {
     this.userMatch(this.email)
@@ -63,14 +73,16 @@ export class EditClientesConDificultadesComponent implements OnInit {
   }
   editarUsuario(){
    const user =  this._accionesCliente.clienteData
-    user.comentarios = this._accionesCliente.comentarios
-    if(user.comentarios != ''){
+    user.comentarios = this.form.value.comentarios
+    if(this.form.invalid == false){
       this._clienteService.editClientesCD(user).subscribe()
       this.mostrarMensaje('Cliente modificado exitosamente!!', 4000, ":D  ")
       this.cerrar()
     } 
     else {
       this.mostrarMensaje('Debe ingresar un comentario', 4000, '!!!')
+      console.log(this.form)
+      console.log(user)
     }
   }
 

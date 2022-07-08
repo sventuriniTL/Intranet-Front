@@ -48,7 +48,6 @@ export class AddClienteConDificultadComponent implements OnInit {
     private router: Router,
     private ui: SidebarService) {
     this.crearFormulario();
-
   }
 
 
