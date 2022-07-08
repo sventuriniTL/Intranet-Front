@@ -71,10 +71,11 @@ export class EditClientesConDificultadesComponent implements OnInit {
       this.reloadCurrentRoute()
     }, 1000)
   }
+
   editarUsuario(){
    const user =  this._accionesCliente.clienteData
-    user.comentarios = this.form.value.comentarios
     if(this.form.invalid == false){
+      user.comentarios = this.form.value.comentarios
       this._clienteService.editClientesCD(user).subscribe()
       this.mostrarMensaje('Cliente modificado exitosamente!!', 4000, ":D  ")
       this.cerrar()
