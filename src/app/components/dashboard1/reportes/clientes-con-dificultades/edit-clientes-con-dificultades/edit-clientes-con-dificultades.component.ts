@@ -61,12 +61,23 @@ export class EditClientesConDificultadesComponent implements OnInit {
       this.reloadCurrentRoute()
     }, 1000)
   }
+  editarUsuario(){
+   const user =  this._accionesCliente.clienteData
+    user.comentarios = this._accionesCliente.comentarios
+    if(user.comentarios != ''){
+      this._clienteService.editClientesCD(user).subscribe()
+      this.mostrarMensaje('Cliente modificado exitosamente!!', 4000, ":D  ")
+      this.cerrar()
+    } 
+    else {
+      this.mostrarMensaje('Debe ingresar un comentario', 4000, '!!!')
+    }
+  }
 
-
-  mostrarMensaje(mensaje: string, duracion: number) {
-    this._snackBar.open(mensaje, '!', {
+  mostrarMensaje(mensaje: string, duracion: number, icon:any) {
+    this._snackBar.open(mensaje, icon, {
       duration: duracion,
-      horizontalPosition: 'center',
+      horizontalPosition: 'left',
       verticalPosition: 'top'
     })
   }
