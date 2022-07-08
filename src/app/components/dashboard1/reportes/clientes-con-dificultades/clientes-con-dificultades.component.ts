@@ -134,12 +134,4 @@ export class ClientesConDificultadesComponent implements OnInit {
       data: 'Está seguro?',
     });
   }
-  openDialog2(action, obj) {
-    obj.action = action;
-    const dialogRef = this.dialog.open(EditClientesConDificultadesComponent, {
-      width: '650px',
-      data: obj
-    });
-  }
-
 }
