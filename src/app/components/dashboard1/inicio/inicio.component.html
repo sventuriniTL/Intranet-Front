@@ -1,22 +1,60 @@
-
 <div class="titulo">
     <h1>
         Bienvenidos a<span style="color:rgb(0, 88, 124);"> Intranet</span><span> 2.0</span>
     </h1>
-   
+
 </div>
 <div class="carousel">
-<ngb-carousel  *ngIf="images">
-    <ng-template ngbSlide>
-        <div class="picsum-img-wrapper">
-            <img [src]="images[0]" alt="Random second slide">
-        </div>
-    </ng-template>
-    <ng-template ngbSlide>
-        <div class="picsum-img-wrapper">
-            <img [src]="images[1]"  alt="Random third slide">
-        </div>
-    </ng-template>
-  </ngb-carousel>
-    <div>       
+    <ngb-carousel *ngIf="images">
+        <ng-template ngbSlide>
+            <div class="picsum-img-wrapper">
+                <img [src]="images[0]" alt="Random second slide">
+            </div>
+        </ng-template>
+        <ng-template ngbSlide>
+            <div class="picsum-img-wrapper">
+                <img [src]="images[1]" alt="Random third slide">
+            </div>
+        </ng-template>
+    </ngb-carousel>
+</div>
+
+<div style="heith: 100px; width:100%">
+    <mat-grid-list  cols="5" rowHeight="2:1">
+        <mat-grid-tile [colspan]="1" [rowspan]="1">
+            <mat-card class="example-card">
+                <mat-card-header>
+                    <mat-card-title >Opción 1</mat-card-title>
+                </mat-card-header>
+            </mat-card>
+        </mat-grid-tile>
+        <mat-grid-tile [colspan]="1" [rowspan]="1">
+            <mat-card class="example-card">
+                <mat-card-header>
+                    <mat-card-title>Opción 2</mat-card-title>
+                </mat-card-header>
+            </mat-card>
+        </mat-grid-tile>
+        <mat-grid-tile [colspan]="1" [rowspan]="1">
+            <mat-card class="example-card">
+                <mat-card-header>
+                    <mat-card-title>Opción 3</mat-card-title>
+                </mat-card-header>
+            </mat-card>
+        </mat-grid-tile>
+        <mat-grid-tile [colspan]="1" [rowspan]="1">
+            <mat-card class="example-card">
+                <mat-card-header>
+                   <mat-card-title>Opción 4</mat-card-title>
+                </mat-card-header>
+            </mat-card>
+        </mat-grid-tile>
+        <mat-grid-tile [colspan]="1" [rowspan]="1">
+            <mat-card class="example-card">
+                <mat-card-header>
+                    <mat-card-title>Opción 5</mat-card-title>
+                </mat-card-header>
+            </mat-card>
+        </mat-grid-tile>
+    </mat-grid-list>
 </div>

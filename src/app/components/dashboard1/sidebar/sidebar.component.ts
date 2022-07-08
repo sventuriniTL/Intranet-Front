@@ -58,12 +58,12 @@ export class SideBarComponent {
   
   private userMatch(email:string|null) {
     if (email === 'administracion@tecnolab.com.ar') {
-      this.imgUser = '../../../assets/imagenes/Gustavo.png';
+      this.imgUser = 'assets/imagenes/Gustavo.png';
       this.nameUser = 'Gustavo Auteri';
       this.emailUser = 'gauteri@tecnolab.com.ar';
     }
     else if (email === 'direccion@tecnolab.com.ar') {
-      this.imgUser = '../../../assets/imagenes/MicrosoftTeams-image.png';
+      this.imgUser = 'assets/imagenes/MicrosoftTeams-image.png';
       this.nameUser = 'Roberto Faivovich';
       this.emailUser = 'rfaivovich@tecnolab.com.ar';
     }

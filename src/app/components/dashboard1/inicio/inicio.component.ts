@@ -10,7 +10,7 @@ import { ClientesConDificultadesComponent } from '../reportes/clientes-con-dific
   providers:[NgbCarouselConfig]
 })
 export class InicioComponent implements OnInit {
-  images = [1, 2].map((n) => `../../assets/imagenes/slider${n}.jpg`);
+  images = [1, 2].map((n) => `assets/imagenes/slider${n}.jpg`);
   constructor(config: NgbCarouselConfig) {
     config.interval = 3000;
     config.pauseOnHover = true;
