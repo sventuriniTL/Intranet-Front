@@ -9,7 +9,6 @@ import { Dashboard1Component } from './dashboard1.component';
 import { InicioComponent } from './inicio/inicio.component';
 import { SideBarComponent } from './sidebar/sidebar.component';
 import { ReportesComponent } from './reportes/reportes.component';
-import { NavbarComponent } from './navbar/navbar.component';
 import { UsuariosComponent } from './usuarios/usuarios.component';
 import { PowerbiComponent } from './powerbi/powerbi.component';
 import { NgbModule, NgbCarouselModule } from '@ng-bootstrap/ng-bootstrap';
@@ -20,6 +19,7 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { DeleteClienteConDificultadesComponent } from './reportes/clientes-con-dificultades/delete-cliente-con-dificultades/delete-cliente-con-dificultades.component';
 import { EditClientesConDificultadesComponent } from './reportes/clientes-con-dificultades/edit-clientes-con-dificultades/edit-clientes-con-dificultades.component';
 import { SidebarDerechoComponent } from './sidebar-derecho/sidebar-derecho.component';
+import { GestionDeClientesComponent } from './gestion-de-clientes/gestion-de-clientes.component';
 
 
 
@@ -37,8 +37,8 @@ import { SidebarDerechoComponent } from './sidebar-derecho/sidebar-derecho.compo
     AddClienteConDificultadComponent,
     DeleteClienteConDificultadesComponent,
     EditClientesConDificultadesComponent,
-    NavbarComponent,
     SidebarDerechoComponent,
+    GestionDeClientesComponent,
   ],
   imports: [
     ReactiveFormsModule,

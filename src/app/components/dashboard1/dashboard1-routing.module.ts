@@ -15,11 +15,7 @@ const routes: Routes = [
       { path: '', component: InicioComponent },
       { path: 'usuarios', component: UsuariosComponent },
       { path: 'reportes', component: ReportesComponent, children: [
-          {
-            path: 'clientesConDificultades', component: ClientesConDificultadesComponent, children: [
-              { path: 'addClientes', component: AddClienteConDificultadComponent }
-            ]
-          }
+          { path: 'clientesConDificultades', component: ClientesConDificultadesComponent }
         ]
       },
       { path: 'powerBi', component: PowerbiComponent },

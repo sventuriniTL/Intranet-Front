@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { NgbCarouselConfig } from '@ng-bootstrap/ng-bootstrap';
-import { ClientesConDificultadesComponent } from '../reportes/clientes-con-dificultades/clientes-con-dificultades.component';
 
 
 @Component({
