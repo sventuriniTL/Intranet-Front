@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild, AfterViewInit, Input, HostListener, Directive, ChangeDetectorRef } from '@angular/core';
+import { Component, OnInit, ViewChild, ChangeDetectorRef } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTable, MatTableDataSource } from '@angular/material/table';
@@ -7,13 +7,10 @@ import { MatSidenav } from '@angular/material/sidenav';
 import { BreakpointObserver, Breakpoints, MediaMatcher } from '@angular/cdk/layout';
 import { Observable } from 'rxjs';
 import { map, shareReplay } from 'rxjs/operators';
-import { MatTabBody } from '@angular/material/tabs';
 import { ServiceAccionesClienteService } from 'src/app/services/service-acciones-cliente.service';
-import { MatDialog, MatDialogRef } from '@angular/material/dialog';
+import { MatDialog } from '@angular/material/dialog';
 import { DeleteClienteConDificultadesComponent } from './delete-cliente-con-dificultades/delete-cliente-con-dificultades.component';
 import { SidenavManagerService, UIState } from 'src/app/services/sidenav-manager.service';
-import { MatTableExporterDirective } from 'mat-table-exporter';
-import { __values } from 'tslib';
 import { SidebarService } from 'src/app/services/sidebar.service';
 import { EditClientesConDificultadesComponent } from './edit-clientes-con-dificultades/edit-clientes-con-dificultades.component';
 

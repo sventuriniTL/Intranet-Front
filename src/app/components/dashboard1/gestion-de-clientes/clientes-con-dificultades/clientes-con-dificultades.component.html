@@ -1,6 +1,18 @@
+
 <link rel="stylesheet"
   href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
-<div style="width:100%">
+  
+  <div style="width:100%">
+
+    <div class="body">
+      <app-sidebar-derecho id="sidebar-1" [title]="'Agregar Cliente con Dificultad'">
+          <app-add-cliente-con-dificultad></app-add-cliente-con-dificultad>
+      </app-sidebar-derecho>
+      <app-sidebar-derecho id="sidebar-2" [title]="'Editar Cliente con Dificultad'">
+          <app-edit-clientes-con-dificultades></app-edit-clientes-con-dificultades>
+      </app-sidebar-derecho>
+  </div>
+
 
     <div class="actionBar" style="width:90%; margin-left:5%;" fxLayout="row" fxLayoutAlign="space-between center">
       <div style="width: 50%; text-align: left;">

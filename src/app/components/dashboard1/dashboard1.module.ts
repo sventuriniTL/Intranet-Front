@@ -13,11 +13,11 @@ import { UsuariosComponent } from './usuarios/usuarios.component';
 import { PowerbiComponent } from './powerbi/powerbi.component';
 import { NgbModule, NgbCarouselModule } from '@ng-bootstrap/ng-bootstrap';
 import { Powerbi2Component } from './powerbi2/powerbi2.component';
-import { ClientesConDificultadesComponent } from './reportes/clientes-con-dificultades/clientes-con-dificultades.component';
-import { AddClienteConDificultadComponent } from './reportes/clientes-con-dificultades/add-cliente-con-dificultad/add-cliente-con-dificultad.component';
+import { ClientesConDificultadesComponent } from './gestion-de-clientes/clientes-con-dificultades/clientes-con-dificultades.component';
+import { AddClienteConDificultadComponent } from './gestion-de-clientes/clientes-con-dificultades/add-cliente-con-dificultad/add-cliente-con-dificultad.component';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
-import { DeleteClienteConDificultadesComponent } from './reportes/clientes-con-dificultades/delete-cliente-con-dificultades/delete-cliente-con-dificultades.component';
-import { EditClientesConDificultadesComponent } from './reportes/clientes-con-dificultades/edit-clientes-con-dificultades/edit-clientes-con-dificultades.component';
+import { DeleteClienteConDificultadesComponent } from './gestion-de-clientes/clientes-con-dificultades/delete-cliente-con-dificultades/delete-cliente-con-dificultades.component';
+import { EditClientesConDificultadesComponent } from './gestion-de-clientes/clientes-con-dificultades/edit-clientes-con-dificultades/edit-clientes-con-dificultades.component';
 import { SidebarDerechoComponent } from './sidebar-derecho/sidebar-derecho.component';
 import { GestionDeClientesComponent } from './gestion-de-clientes/gestion-de-clientes.component';
 
@@ -41,7 +41,6 @@ import { GestionDeClientesComponent } from './gestion-de-clientes/gestion-de-cli
     GestionDeClientesComponent,
   ],
   imports: [
-    ReactiveFormsModule,
     FlexLayoutModule,
     CommonModule,
     Dashboard1RoutingModule,
@@ -49,6 +48,7 @@ import { GestionDeClientesComponent } from './gestion-de-clientes/gestion-de-cli
     NgbCarouselModule,
     NgbModule,
     FormsModule,
+    ReactiveFormsModule,
   ],
   entryComponents: [DeleteClienteConDificultadesComponent],
   providers: [
