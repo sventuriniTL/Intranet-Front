@@ -1,5 +1,4 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { ClientesConDificultadesComponent } from './clientes-con-dificultades.component';
 
 describe('ClientesConDificultadesComponent', () => {
@@ -11,6 +10,9 @@ describe('ClientesConDificultadesComponent', () => {
       declarations: [ ClientesConDificultadesComponent ]
     })
     .compileComponents();
+
+
+
   });
 
   beforeEach(() => {
