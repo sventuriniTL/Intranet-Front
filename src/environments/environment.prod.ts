@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  endpoint: 'http://localhost:82/api'
+  endpoint: 'http://tecnoqua:82/api'
 };
