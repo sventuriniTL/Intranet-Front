@@ -16,7 +16,10 @@ export class SideBarComponent {
 
   private _mobileQueryListener: () => void;
 
-  constructor(changeDetectorRef: ChangeDetectorRef, media: MediaMatcher, private breakpointObserver: BreakpointObserver) {
+  constructor(changeDetectorRef: ChangeDetectorRef,
+    media: MediaMatcher,
+    private breakpointObserver: BreakpointObserver,
+    ) {
     this.mobileQuery = media.matchMedia('(max-width: 600px)');
     this._mobileQueryListener = () => changeDetectorRef.detectChanges();
     this.mobileQuery.addListener(this._mobileQueryListener);
@@ -42,6 +45,9 @@ export class SideBarComponent {
   this.userMatch(this.email);
   }
 
+  cerrar(){
+    
+  }
 
 
 
@@ -53,7 +59,7 @@ export class SideBarComponent {
 
 
 
-  
+
   private userMatch(email:string|null) {
     if (email === 'administracion@tecnolab.com.ar') {
       this.imgUser = 'assets/imagenes/Gustavo.png';
