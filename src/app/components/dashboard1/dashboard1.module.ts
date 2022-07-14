@@ -33,7 +33,6 @@ import { GestionDeClientesComponent } from './gestion-de-clientes/gestion-de-cli
     SideBarComponent,
     PowerbiComponent,
     Powerbi2Component,
-    ClientesConDificultadesComponent,
     AddClienteConDificultadComponent,
     DeleteClienteConDificultadesComponent,
     EditClientesConDificultadesComponent,
@@ -54,7 +53,7 @@ import { GestionDeClientesComponent } from './gestion-de-clientes/gestion-de-cli
   providers: [
     ClientesConDificultadesComponent,
     EditClientesConDificultadesComponent,
-    
+
   ],
 })
 export class Dashboard1Module { }

@@ -1,5 +1,9 @@
 <div class="body">
-<router-outlet></router-outlet>
+  componente gestion de clientes WORKS
+  <button routerLink="./clientesConDificultades" >boton1</button>
+  <button routerLink="./usuarios">boton</button>
+  <router-outlet></router-outlet>
+
   <app-sidebar-derecho id="sidebar-1" [title]="'Agregar Cliente con Dificultad'">
       <app-add-cliente-con-dificultad></app-add-cliente-con-dificultad>
   </app-sidebar-derecho>
@@ -7,4 +11,3 @@
       <app-edit-clientes-con-dificultades></app-edit-clientes-con-dificultades>
   </app-sidebar-derecho>
 </div>
-
