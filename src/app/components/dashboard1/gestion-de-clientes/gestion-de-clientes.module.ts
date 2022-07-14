@@ -8,7 +8,8 @@ import { MaterialModule } from 'src/app/material.module';
 
 @NgModule({
   declarations: [
-    ClientesConDificultadesComponent
+    ClientesConDificultadesComponent,
+
   ],
   imports: [
     CommonModule,

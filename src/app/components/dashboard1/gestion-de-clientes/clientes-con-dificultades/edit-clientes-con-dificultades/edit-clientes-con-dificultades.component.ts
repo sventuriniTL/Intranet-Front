@@ -41,7 +41,7 @@ export class EditClientesConDificultadesComponent implements OnInit {
   ) {
     this.crearFormulario();
   }
-  
+
   crearFormulario() {
     this.form = this.fb.group({
       comentarios: ['', Validators.required],
@@ -79,7 +79,7 @@ export class EditClientesConDificultadesComponent implements OnInit {
       this._clienteService.editClientesCD(user).subscribe()
       this.mostrarMensaje('Cliente modificado exitosamente!!', 4000, ":D  ")
       this.cerrar()
-    } 
+    }
     else {
       this.mostrarMensaje('Debe ingresar un comentario', 4000, '!!!')
       console.log(this.form)

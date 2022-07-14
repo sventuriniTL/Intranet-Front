@@ -3,14 +3,13 @@
 html,
 body {
   height: 100%;
+  margin:0;
+}
+.container{
+  height: 100%;
   width: 100%;
-  background-color: rgb(255, 255, 255);
 }
 
-body {
-  margin: 0;
-  font-family: Roboto, "Helvetica Neue", sans-serif;
-}
 
 *::-webkit-scrollbar {
   -webkit-appearance: none;

@@ -1,10 +1,10 @@
 
 <div class="example-container" [class.example-is-mobile]="mobileQuery.matches">
     <mat-toolbar style="background-color:rgb(5, 115, 158); height: 60px; " class="example-toolbar">
-        <button style="color:aliceblue" mat-icon-button (click)="snav.toggle()">
-            <mat-icon style="font-size:30px;">menu</mat-icon>
+        <button style="color:aliceblue;" mat-icon-button (click)="snav.toggle()">
+            <mat-icon style="font-size:30px; margin-right: 6px;">menu</mat-icon>
         </button>
-        <h1 class="example-app-name" style="color:aliceblue">Intranet 2.0</h1>
+        <h1 class="example-app-name" style="color:aliceblue">Tecnolab</h1>
         <span class="example-spacer"></span>
 
 
@@ -46,14 +46,16 @@
             </div>
             <mat-nav-list>
                 <a mat-list-item routerLink="/home" (click)="snav.close()"><i class="fa-solid fa-house" ></i>Home</a>
-                <a mat-list-item routerLink="/home/usuarios" (click)="snav.close()"><i class="fa-solid fa-users"></i>Usuarios</a>
-                <a mat-list-item routerLink="/home/gestionDeClientes" (click)="snav.close()"><i class="fa-brands fa-rebel"></i>Gestión de clientes</a>
-                <a mat-list-item routerLink="/home/powerBi" (click)="snav.close()"><i class="fa-solid fa-chart-column"></i>PowerBi</a>
-                <a mat-list-item routerLink="/home/powerBi2" (click)="snav.close()"><i class="fa-solid fa-chart-pie"></i>PowerBi-2</a>
+                <a mat-list-item routerLink="usuarios" (click)="snav.close()"><i class="fa-solid fa-users"></i>Usuarios</a>
+                <a mat-list-item routerLink="gestionDeClientes" (click)="snav.close()"><i class="fa-brands fa-rebel"></i>Gestión de clientes</a>
+                <a mat-list-item routerLink="powerBi" (click)="snav.close()"><i class="fa-solid fa-chart-column"></i>PowerBi</a>
+                <a mat-list-item routerLink="powerBi2" (click)="snav.close()"><i class="fa-solid fa-chart-pie"></i>PowerBi-2</a>
             </mat-nav-list>
         </mat-sidenav>
         <mat-sidenav-content>
+
             <router-outlet></router-outlet>
+
         </mat-sidenav-content>
     </mat-sidenav-container>
 </div>

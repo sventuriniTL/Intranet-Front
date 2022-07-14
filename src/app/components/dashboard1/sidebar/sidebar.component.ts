@@ -45,10 +45,7 @@ export class SideBarComponent {
   this.userMatch(this.email);
   }
 
-  cerrar(){
-    
-  }
-
+ 
 
 
 
