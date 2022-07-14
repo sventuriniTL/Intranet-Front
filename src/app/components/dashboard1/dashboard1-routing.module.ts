@@ -13,12 +13,7 @@ const routes: Routes = [
     path: '', component: Dashboard1Component, children: [
       { path: '', component: InicioComponent },
       { path: 'usuarios', component: UsuariosComponent },
-      { path: 'gestionDeClientes', component: GestionDeClientesComponent, children: [
-        { 
-          path: 'clientesConDificultades', component: ClientesConDificultadesComponent 
-        }
-      ]
-    },
+      { path: 'gestionDeClientes', loadChildren: () => import('./gestion-de-clientes/gestion-de-clientes.module').then(x => x.GestionDeClientesModule)},
       { path: 'powerBi', component: PowerbiComponent },
       { path: 'powerBi2', component: Powerbi2Component },
     ]

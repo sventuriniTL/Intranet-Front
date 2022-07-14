@@ -15,7 +15,7 @@ export class ServiceAccionesClienteService {
   constructor() { }
 
   public pasarDato(param: any) {
-    
+
     this.clienteData = param
     this.id = this.clienteData.clI_ID
     this.nom = this.clienteData.clI_NOM
@@ -28,6 +28,6 @@ export class ServiceAccionesClienteService {
   handlerData(param: any) {
     this.clienteDataSubject = new BehaviorSubject<string>(param);
     this.clienteDataSubject.next(param => this.clienteData = param)
-    console.log('acccaaa ' + this.clienteData.clI_ID)
+
   }
 }
